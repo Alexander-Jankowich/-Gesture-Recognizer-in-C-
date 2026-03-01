@@ -1,0 +1,88 @@
+/*
+ * SDL_app:  An all-in-one library for packing SDL applications.
+ * Copyright (C) 2022-2025 Walker M. White
+ *
+ * This library is a shim built on top of SDL and several extensions. This
+ * library allows us to introduce several functions to expose functionality
+ * that we feel to be missing on mobile devices. In particular,these functions
+ * have to do with improving orientation detection. They also expose device 
+ * information for data analytics. 
+ *
+ * In addition, this library provides us with a custom build system that makes
+ * it easy to quickly to create apps on top of SDL.
+ *
+ * SDL License:
+ *
+ * This software is provided 'as-is', without any express or implied
+ * warranty.  In no event will the authors be held liable for any damages
+ * arising from the use of this software.
+ *
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ *
+ * 1. The origin of this software must not be misrepresented; you must not
+ *    claim that you wrote the original software. If you use this software
+ *    in a product, an acknowledgment in the product documentation would be
+ *    appreciated but is not required.
+ * 2. Altered source versions must be plainly marked as such, and must not be
+ *    misrepresented as being the original software.
+ * 3. This notice may not be removed or altered from any source distribution.
+ */
+#ifndef __APP_SYS_DEVICE_H__
+#define __APP_SYS_DEVICE_H__
+#include <SDL3/SDL.h>
+
+/**
+ *  \file APP_sysdevice.h
+ *
+ *  \brief Include file for device identification information
+ *  \author Walker M. White
+ */
+#ifdef __cplusplus
+extern "C" {
+#endif
+#include <stdio.h>
+
+/**
+ * System dependent version of APP_GetDeviceName
+ *
+ * @return the name of this device
+ */
+extern const char* APP_SYS_GetDeviceName(void);
+
+/**
+ * System dependent version of APP_GetDeviceModel
+ *
+ * @return the model of this device
+ */
+extern const char* APP_SYS_GetDeviceModel(void);
+
+/**
+ * System dependent version of APP_GetDeviceOS
+ *
+ * @return the operating system running this device
+ */
+extern const char* APP_SYS_GetDeviceOS(void);
+
+/**
+ * System dependent version of APP_GetDeviceOSVersion
+ *
+ * @return the operating system version of this device
+ */
+extern const char* APP_SYS_GetDeviceOSVersion(void);
+
+/**
+ * System dependent version of APP_GetDeviceID
+ *
+ * @return a unique identifier for this device
+ */
+extern const char* APP_SYS_GetDeviceID(void);
+
+#ifdef __cplusplus
+}
+#endif
+
+
+#endif /* __APP_SYS_DEVICE_H__ */
+

@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB0F3CB827FB9FD40037CC66 /* Mac.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0F3CB327FB9FD40037CC66 /* Mac.xcassets */; platformFilters = (macos, ); };
+		EB0F3CB827FB9FD40037CC66 /* Mac.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0F3CB327FB9FD40037CC66 /* Mac.xcassets */; platformFilters = (macos, ); };
+		EB17A3092EB3E6C3006BC19C /* ios.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBC7AEF027FBBEF5001F1467 /* ios.plist */; platformFilters = (ios, tvos, xros, ); };
+		EB17A3662EB44EED006BC19C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3652EB44EED006BC19C /* AudioToolbox.framework */; };
+		EB17A3682EB44F12006BC19C /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3672EB44F12006BC19C /* UniformTypeIdentifiers.framework */; };
+		EB17A36A2EB44F1A006BC19C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3692EB44F1A006BC19C /* UIKit.framework */; platformFilters = (ios, tvos, xros, ); };
+		EB17A36C2EB44F22006BC19C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A36B2EB44F22006BC19C /* QuartzCore.framework */; };
+		EB17A36E2EB44F2A006BC19C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A36D2EB44F2A006BC19C /* OpenGLES.framework */; platformFilters = (ios, tvos, xros, ); };
+		EB17A3702EB44F34006BC19C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A36F2EB44F34006BC19C /* OpenGL.framework */; platformFilters = (macos, ); };
+		EB17A3722EB44F3E006BC19C /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3712EB44F3E006BC19C /* Metal.framework */; };
+		EB17A3742EB44F47006BC19C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3732EB44F47006BC19C /* MobileCoreServices.framework */; platformFilters = (ios, tvos, xros, ); };
+		EB17A3762EB44F50006BC19C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3752EB44F50006BC19C /* IOKit.framework */; };
+		EB17A3782EB44F58006BC19C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3772EB44F58006BC19C /* ImageIO.framework */; };
+		EB17A37A2EB44F61006BC19C /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3792EB44F61006BC19C /* GameController.framework */; };
+		EB17A37C2EB44F6C006BC19C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A37B2EB44F6C006BC19C /* Foundation.framework */; };
+		EB17A3852EB44F92006BC19C /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A37D2EB44F91006BC19C /* CoreAudio.framework */; };
+		EB17A3862EB44F92006BC19C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A37E2EB44F91006BC19C /* CoreMedia.framework */; };
+		EB17A3872EB44F92006BC19C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A37F2EB44F91006BC19C /* CoreMotion.framework */; platformFilters = (ios, macos, xros, ); };
+		EB17A3882EB44F92006BC19C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3802EB44F92006BC19C /* CoreGraphics.framework */; };
+		EB17A3892EB44F93006BC19C /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3812EB44F92006BC19C /* CoreImage.framework */; };
+		EB17A38A2EB44F93006BC19C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3822EB44F92006BC19C /* CoreText.framework */; };
+		EB17A38B2EB44F93006BC19C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3832EB44F92006BC19C /* CoreFoundation.framework */; };
+		EB17A38C2EB44F93006BC19C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3842EB44F92006BC19C /* CoreVideo.framework */; };
+		EB17A3912EB44FB7006BC19C /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A38D2EB44FB6006BC19C /* ApplicationServices.framework */; platformFilters = (macos, ); };
+		EB17A3922EB44FB7006BC19C /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A38E2EB44FB6006BC19C /* Carbon.framework */; platformFilters = (macos, ); };
+		EB17A3932EB44FB7006BC19C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A38F2EB44FB6006BC19C /* Cocoa.framework */; platformFilters = (macos, ); };
+		EB17A3942EB44FB7006BC19C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3902EB44FB6006BC19C /* AVFoundation.framework */; };
+		EB17A3982EB450A6006BC19C /* CoreHaptics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3972EB450A6006BC19C /* CoreHaptics.framework */; };
+		EB17A39A2EB450CF006BC19C /* ForceFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17A3992EB450CF006BC19C /* ForceFeedback.framework */; platformFilters = (macos, ); };
+		EB669F772EABD9DC0018B866 /* libsdl3app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB669F762EABD9BD0018B866 /* libsdl3app.a */; platformFilters = (ios, macos, tvos, xros, ); };
+		EB669FF02EABF7730018B866 /* iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0F3CB127FB9FD40037CC66 /* iOS.xcassets */; platformFilters = (ios, tvos, xros, ); };
+		EB669FFE2EABF7A30018B866 /* Landscape.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0F3CB027FB9FD40037CC66 /* Landscape.storyboard */; platformFilters = (ios, tvos, xros, ); };
+		EB669FFF2EABF7A30018B866 /* Portrait.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0F3CB527FB9FD40037CC66 /* Portrait.storyboard */; platformFilters = (ios, tvos, xros, ); };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB669F752EABD9BD0018B866 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669F6B2EABD9BD0018B866 /* sdl3app.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB7089351CD51810005B1025;
+			remoteInfo = sdl3app;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EB0F3C9627FB9DCB0037CC66 /* __DISPLAY_NAME__.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = __DISPLAY_NAME__.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB0F3CB027FB9FD40037CC66 /* Landscape.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Landscape.storyboard; sourceTree = "<group>"; };
+		EB0F3CB127FB9FD40037CC66 /* iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iOS.xcassets; sourceTree = "<group>"; };
+		EB0F3CB227FB9FD40037CC66 /* macos.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = macos.entitlements; sourceTree = "<group>"; };
+		EB0F3CB327FB9FD40037CC66 /* Mac.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Mac.xcassets; sourceTree = "<group>"; };
+		EB0F3CB527FB9FD40037CC66 /* Portrait.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Portrait.storyboard; sourceTree = "<group>"; };
+		EB17A3652EB44EED006BC19C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A3672EB44F12006BC19C /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A3692EB44F1A006BC19C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A36B2EB44F22006BC19C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A36D2EB44F2A006BC19C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A36F2EB44F34006BC19C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		EB17A3712EB44F3E006BC19C /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A3732EB44F47006BC19C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A3752EB44F50006BC19C /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A3772EB44F58006BC19C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A3792EB44F61006BC19C /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A37B2EB44F6C006BC19C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A37D2EB44F91006BC19C /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/CoreAudio.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A37E2EB44F91006BC19C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A37F2EB44F91006BC19C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A3802EB44F92006BC19C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A3812EB44F92006BC19C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A3822EB44F92006BC19C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A3832EB44F92006BC19C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A3842EB44F92006BC19C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A38D2EB44FB6006BC19C /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		EB17A38E2EB44FB6006BC19C /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		EB17A38F2EB44FB6006BC19C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EB17A3902EB44FB6006BC19C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A3972EB450A6006BC19C /* CoreHaptics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreHaptics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/CoreHaptics.framework; sourceTree = DEVELOPER_DIR; };
+		EB17A3992EB450CF006BC19C /* ForceFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ForceFeedback.framework; path = System/Library/Frameworks/ForceFeedback.framework; sourceTree = SDKROOT; };
+		EB669F6B2EABD9BD0018B866 /* sdl3app.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sdl3app.xcodeproj; path = ../../../../release/sdlapp/buildfiles/apple/sdl3app.xcodeproj; sourceTree = "<group>"; };
+		EBC7AEF027FBBEF5001F1467 /* ios.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ios.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section *//* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB0F3C9327FB9DCB0037CC66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB17A3912EB44FB7006BC19C /* ApplicationServices.framework in Frameworks */,
+				EB17A3662EB44EED006BC19C /* AudioToolbox.framework in Frameworks */,
+				EB17A3942EB44FB7006BC19C /* AVFoundation.framework in Frameworks */,
+				EB17A3922EB44FB7006BC19C /* Carbon.framework in Frameworks */,
+				EB17A3932EB44FB7006BC19C /* Cocoa.framework in Frameworks */,
+				EB17A3852EB44F92006BC19C /* CoreAudio.framework in Frameworks */,
+				EB17A38B2EB44F93006BC19C /* CoreFoundation.framework in Frameworks */,
+				EB17A3882EB44F92006BC19C /* CoreGraphics.framework in Frameworks */,
+				EB17A3982EB450A6006BC19C /* CoreHaptics.framework in Frameworks */,
+				EB17A3892EB44F93006BC19C /* CoreImage.framework in Frameworks */,
+				EB17A3862EB44F92006BC19C /* CoreMedia.framework in Frameworks */,
+				EB17A3872EB44F92006BC19C /* CoreMotion.framework in Frameworks */,
+				EB17A38A2EB44F93006BC19C /* CoreText.framework in Frameworks */,
+				EB17A38C2EB44F93006BC19C /* CoreVideo.framework in Frameworks */,
+				EB17A39A2EB450CF006BC19C /* ForceFeedback.framework in Frameworks */,
+				EB17A37C2EB44F6C006BC19C /* Foundation.framework in Frameworks */,
+				EB17A37A2EB44F61006BC19C /* GameController.framework in Frameworks */,
+				EB17A3782EB44F58006BC19C /* ImageIO.framework in Frameworks */,
+				EB17A3762EB44F50006BC19C /* IOKit.framework in Frameworks */,
+				EB17A3722EB44F3E006BC19C /* Metal.framework in Frameworks */,
+				EB17A3742EB44F47006BC19C /* MobileCoreServices.framework in Frameworks */,
+				EB17A3702EB44F34006BC19C /* OpenGL.framework in Frameworks */,
+				EB17A36E2EB44F2A006BC19C /* OpenGLES.framework in Frameworks */,
+				EB17A36C2EB44F22006BC19C /* QuartzCore.framework in Frameworks */,
+				EB17A36A2EB44F1A006BC19C /* UIKit.framework in Frameworks */,
+				EB17A3682EB44F12006BC19C /* UniformTypeIdentifiers.framework in Frameworks */,
+				EB669F772EABD9DC0018B866 /* libsdl3app.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB0F3C8D27FB9DCB0037CC66 = {
+			isa = PBXGroup;
+			children = (
+				EB0F3C9827FB9DCB0037CC66 /* Source */,
+				EB23B0F828BFF70E001EA958 /* Assets */,
+				EB0F3CAE27FB9F700037CC66 /* Resources */,
+				EB0F3C9727FB9DCB0037CC66 /* Products */,
+				EB0F3CC427FBA1D90037CC66 /* Frameworks */,
+				EB669F6B2EABD9BD0018B866 /* sdl3app.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		EB0F3C9727FB9DCB0037CC66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB0F3C9627FB9DCB0037CC66 /* __DISPLAY_NAME__.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB0F3C9827FB9DCB0037CC66 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Source;
+			path = __SOURCE_DIR__;
+			sourceTree = "<group>";
+		};
+		EB0F3CAE27FB9F700037CC66 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EBC7AEF027FBBEF5001F1467 /* ios.plist */,
+				EB0F3CB227FB9FD40037CC66 /* macos.entitlements */,
+				EB0F3CB127FB9FD40037CC66 /* iOS.xcassets */,
+				EB0F3CB027FB9FD40037CC66 /* Landscape.storyboard */,
+				EB0F3CB327FB9FD40037CC66 /* Mac.xcassets */,
+				EB0F3CB527FB9FD40037CC66 /* Portrait.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EB0F3CC427FBA1D90037CC66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB17A3992EB450CF006BC19C /* ForceFeedback.framework */,
+				EB17A3972EB450A6006BC19C /* CoreHaptics.framework */,
+				EB17A38D2EB44FB6006BC19C /* ApplicationServices.framework */,
+				EB17A3902EB44FB6006BC19C /* AVFoundation.framework */,
+				EB17A38E2EB44FB6006BC19C /* Carbon.framework */,
+				EB17A38F2EB44FB6006BC19C /* Cocoa.framework */,
+				EB17A37D2EB44F91006BC19C /* CoreAudio.framework */,
+				EB17A3832EB44F92006BC19C /* CoreFoundation.framework */,
+				EB17A3802EB44F92006BC19C /* CoreGraphics.framework */,
+				EB17A3812EB44F92006BC19C /* CoreImage.framework */,
+				EB17A37E2EB44F91006BC19C /* CoreMedia.framework */,
+				EB17A37F2EB44F91006BC19C /* CoreMotion.framework */,
+				EB17A3822EB44F92006BC19C /* CoreText.framework */,
+				EB17A3842EB44F92006BC19C /* CoreVideo.framework */,
+				EB17A37B2EB44F6C006BC19C /* Foundation.framework */,
+				EB17A3792EB44F61006BC19C /* GameController.framework */,
+				EB17A3772EB44F58006BC19C /* ImageIO.framework */,
+				EB17A3752EB44F50006BC19C /* IOKit.framework */,
+				EB17A3732EB44F47006BC19C /* MobileCoreServices.framework */,
+				EB17A3712EB44F3E006BC19C /* Metal.framework */,
+				EB17A36F2EB44F34006BC19C /* OpenGL.framework */,
+				EB17A36D2EB44F2A006BC19C /* OpenGLES.framework */,
+				EB17A36B2EB44F22006BC19C /* QuartzCore.framework */,
+				EB17A3692EB44F1A006BC19C /* UIKit.framework */,
+				EB17A3672EB44F12006BC19C /* UniformTypeIdentifiers.framework */,
+				EB17A3652EB44EED006BC19C /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB23B0F828BFF70E001EA958 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Assets;
+			path = __ASSET_DIR__;
+			sourceTree = "<group>";
+		};
+		EB8A27DE2B0D913D005BF406 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB669F762EABD9BD0018B866 /* libsdl3app.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB0F3C9527FB9DCB0037CC66 /* main-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB0F3CA927FB9DCC0037CC66 /* Build configuration list for PBXNativeTarget "main-app" */;
+			buildPhases = (
+				EB0F3C9227FB9DCB0037CC66 /* Sources */,
+				EB0F3C9327FB9DCB0037CC66 /* Frameworks */,
+				EB0F3C9427FB9DCB0037CC66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "main-app";
+			productName = "main-app";
+			productReference = EB0F3C9627FB9DCB0037CC66 /* __DISPLAY_NAME__.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB0F3C8E27FB9DCB0037CC66 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					EB0F3C9527FB9DCB0037CC66 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = EB0F3C9127FB9DCB0037CC66 /* Build configuration list for PBXProject "app" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB0F3C8D27FB9DCB0037CC66;
+			productRefGroup = EB0F3C9727FB9DCB0037CC66 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EB8A27DE2B0D913D005BF406 /* Products */;
+					ProjectRef = EB669F6B2EABD9BD0018B866 /* sdl3app.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				EB0F3C9527FB9DCB0037CC66 /* main-app */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EB669F762EABD9BD0018B866 /* libsdl3app.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libsdl3app.a;
+			remoteRef = EB669F752EABD9BD0018B866 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB0F3C9427FB9DCB0037CC66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB17A3092EB3E6C3006BC19C /* ios.plist in Resources */,
+				EB669FFE2EABF7A30018B866 /* Landscape.storyboard in Resources */,
+				EB669FFF2EABF7A30018B866 /* Portrait.storyboard in Resources */,
+				EB669FF02EABF7730018B866 /* iOS.xcassets in Resources */,
+				AB0691C0954054E19642F4CF /* sounds in Resources */,
+				AB7A203902125E938F460499 /* logo.png in Resources */,
+				AB169DAF529A5014BEFCD0AE /* fonts in Resources */,
+				EB0F3CB827FB9FD40037CC66 /* Mac.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB0F3C9227FB9DCB0037CC66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBC7AEBE27FBB41F001F1467 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EB0F3CA727FB9DCC0037CC66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDL_INCLUDES)",
+					__APPLE_INCLUDE__,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SDL_INCLUDES = __SDL_INCLUDE__;
+				SUPPORTS_MAC_CATALYST = YES;
+				TVOS_DEPLOYMENT_TARGET = 15.6;
+				VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS = "OpenGL OpenGLES";
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
+				XROS_DEPLOYMENT_TARGET = 1.3;
+			};
+			name = Debug;
+		};
+		EB0F3CA827FB9DCC0037CC66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDL_INCLUDES)",
+					__APPLE_INCLUDE__,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SDL_INCLUDES = __SDL_INCLUDE__;
+				SUPPORTS_MAC_CATALYST = YES;
+				TVOS_DEPLOYMENT_TARGET = 15.6;
+				VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS = "OpenGL OpenGLES";
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
+				XROS_DEPLOYMENT_TARGET = 1.3;
+			};
+			name = Release;
+		};
+		EB0F3CAA27FB9DCC0037CC66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/resources/macos.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				"GCC_PREPROCESSOR_DEFINITIONS[sdk=iphone*]" = (
+					GLES_SILENCE_DEPRECATION,
+					"$(inherited)",
+				);
+				"GCC_PREPROCESSOR_DEFINITIONS[sdk=macosx*]" = (
+					GL_SILENCE_DEPRECATION,
+					"$(inherited)",
+				);
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDL_INCLUDES)",
+					__APPLE_INCLUDE__,
+				);
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphone*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=macosx*]" = "";
+				"INFOPLIST_KEY_UILaunchStoryboardName[sdk=iphone*]" = Landscape;
+				"INFOPLIST_KEY_UIMainStoryboardFile[sdk=iphone*]" = Landscape;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = __APP_ID__;
+				PRODUCT_NAME = __DISPLAY_NAME__;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+			};
+			name = Debug;
+		};
+		EB0F3CAB27FB9DCC0037CC66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/resources/macos.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = GL_SILENCE_DEPRECATION;
+				"GCC_PREPROCESSOR_DEFINITIONS[sdk=iphone*]" = GLES_SILENCE_DEPRECATION;
+				"GCC_PREPROCESSOR_DEFINITIONS[sdk=macosx*]" = GL_SILENCE_DEPRECATION;
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDL_INCLUDES)",
+					__APPLE_INCLUDE__,
+				);
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphone*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=macosx*]" = "";
+				"INFOPLIST_KEY_UILaunchStoryboardName[sdk=iphone*]" = Landscape;
+				"INFOPLIST_KEY_UIMainStoryboardFile[sdk=iphone*]" = Landscape;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = __APP_ID__;
+				PRODUCT_NAME = __DISPLAY_NAME__;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB0F3C9127FB9DCB0037CC66 /* Build configuration list for PBXProject "app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB0F3CA727FB9DCC0037CC66 /* Debug */,
+				EB0F3CA827FB9DCC0037CC66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB0F3CA927FB9DCC0037CC66 /* Build configuration list for PBXNativeTarget "main-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB0F3CAA27FB9DCC0037CC66 /* Debug */,
+				EB0F3CAB27FB9DCC0037CC66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB0F3C8E27FB9DCB0037CC66 /* Project object */;
+}

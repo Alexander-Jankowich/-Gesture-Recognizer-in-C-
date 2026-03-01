@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\device">
+      <UniqueIdentifier>{50b4aeab-84d6-4665-abfe-5d33ed007179}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\display">
+      <UniqueIdentifier>{9d32e148-bd69-4005-aea0-f4c9055f4ed6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\display\dummy">
+      <UniqueIdentifier>{fbe6b5f8-2da5-4674-bfc8-6fcd158293c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\device\windows">
+      <UniqueIdentifier>{858f667c-1b3e-47e9-b5f2-5dc396ca3d2e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\SDL3_app\SDL_app.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\app\device\APP_sysdevice.h">
+      <Filter>Source Files\device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\app\display\APP_sysdisplay.h">
+      <Filter>Source Files\display</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\app\APP_version.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\app\device\APP_device.c">
+      <Filter>Source Files\device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\app\device\windows\APP_sysdevice.cpp">
+      <Filter>Source Files\device\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\app\display\APP_display.c">
+      <Filter>Source Files\display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\app\display\dummy\APP_sysdisplay.c">
+      <Filter>Source Files\display\dummy</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="version.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,84 @@
+# sdl3_image cmake project-config input for CMakeLists.txt script
+
+include(FeatureSummary)
+set_package_properties(SDL3_image PROPERTIES
+    URL "https://gdiac.cs.cornell.edu/projects/SDL_atk"
+    DESCRIPTION "SDL_atk is an audio stream processing library"
+)
+
+set(SDL3_atk_FOUND ON)
+
+set(SDLATK_WAV          @SDLATK_WAV_ENABLED@)
+set(SDLATK_VORB         @SDLATK_VORB_ENABLED@)
+set(SDLATK_FLAC         @SDLATK_FLAC_ENABLED@)
+set(SDLATK_MP3         	@SDLATK_MP3_ENABLED@)
+
+set(SDLATK_WAV_SAVE 	@SDLATK_WAV_SAVE@)
+set(SDLATK_VORB_SAVE	@SDLATK_VORB_SAVE@)
+set(SDLATK_FLAC_SAVE 	@SDLATK_FLAC_SAVE@)
+
+set(SDLATK_VENDORED  	@SDLATK_VENDORED@)
+
+set(SDLATK_SDL3_REQUIRED_VERSION  @SDL_REQUIRED_VERSION@)
+
+set(SDL3_atk_SDL3_atk-shared_FOUND FALSE)
+if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/SDL3_atk-shared-targets.cmake")
+    include("${CMAKE_CURRENT_LIST_DIR}/SDL3_atk-shared-targets.cmake")
+    set(SDL3_atk_SDL3_atk-shared_FOUND TRUE)
+endif()
+
+set(SDL3_atk_SDL3_atk-static_FOUND FALSE)
+if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/SDL3_atk-static-targets.cmake")
+
+    if(SDLATK_VENDORED)
+    	# NOT SURE THERE IS ANYTHING HERE
+    else()
+        set(_sdl_cmake_module_path "${CMAKE_MODULE_PATH}")
+        list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}")
+
+        include(CMakeFindDependencyMacro)
+
+        if(SDLATK_OGG AND NOT Ogg::ogg)
+            find_dependency(Ogg)
+        endif()
+
+        if(SDLATK_FLAC AND NOT FLAC::FLAC)
+            find_dependency(FLAC)
+        endif()
+
+        if(SDLATK_KISSFFT AND NOT kissfft::kissfft)
+            find_dependency(kissfft)
+        endif()
+
+        set(CMAKE_MODULE_PATH "${_sdl_cmake_module_path}")
+        unset(_sdl_cmake_module_path)
+    endif()
+
+    include("${CMAKE_CURRENT_LIST_DIR}/SDL3_atk-static-targets.cmake")
+    set(SDL3_atk_SDL3_atk-static_FOUND TRUE)
+endif()
+
+function(_sdl_create_target_alias_compat NEW_TARGET TARGET)
+    if(CMAKE_VERSION VERSION_LESS "3.18")
+        # Aliasing local targets is not supported on CMake < 3.18, so make it global.
+        add_library(${NEW_TARGET} INTERFACE IMPORTED)
+        set_target_properties(${NEW_TARGET} PROPERTIES INTERFACE_LINK_LIBRARIES "${TARGET}")
+    else()
+        add_library(${NEW_TARGET} ALIAS ${TARGET})
+    endif()
+endfunction()
+
+# Make sure SDL3_atk::SDL3_atk always exists
+if(NOT TARGET SDL3_atk::SDL3_atk)
+    if(TARGET SDL3_atk::SDL3_atk-shared)
+        _sdl_create_target_alias_compat(SDL3_atk::SDL3_atk SDL3_atk::SDL3_atk-shared)
+    elseif(TARGET SDL3_atk::SDL3_atk-static)
+        _sdl_create_target_alias_compat(SDL3_atk::SDL3_atk SDL3_atk::SDL3_atk-static)
+    endif()
+endif()
+
+if(NOT SDL3_atk_COMPONENTS AND NOT TARGET SDL3_atk::SDL3_atk-shared AND NOT TARGET SDL3_atk::SDL3_atk-static)
+    set(SDL3_atk_FOUND FALSE)
+endif()
+@PACKAGE_INIT@
+check_required_components(SDL3_atk)

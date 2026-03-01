@@ -1,0 +1,62 @@
+// GRADLE BUILD SETTINGS FOR ANDROID PROJECT
+//
+// Adapted from the default SDL project to support asset directories and more.
+//
+// Author: Walker M. White
+// Date: 12/21/23
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 35
+    defaultConfig {
+        applicationId "__NAMESPACE__"
+        minSdk 26
+        targetSdkVersion 35
+        versionCode 1
+        versionName "1.0"
+        externalNativeBuild {
+        	// ONLY PICK ONE OF THE TWO
+            //ndkBuild {
+            //    arguments  'APP_PLATFORM=android-28', 'ANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON'
+            //    abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+            //    cppFlags '-std=c++17', '-fexceptions', '-frtti', '-Wno-conversion-null',  '-Wno-deprecated', '-Wno-deprecated-declarations'
+            //    cFlags '-Wno-conversion-null',  '-Wno-deprecated', '-Wno-deprecated-declarations'
+            //}
+			cmake {
+                arguments "-DANDROID_PLATFORM=android-28", "-DANDROID_STL=c++_static", "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON"
+                abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lint {
+        abortOnError false
+    }
+    namespace '__NAMESPACE__'
+    sourceSets.main {
+        jniLibs.srcDir 'libs'
+        assets.srcDirs += "__ASSET_DIR__"
+    }
+    externalNativeBuild {
+		// ONLY PICK ONE OF THE TWO
+        //ndkBuild {
+        //    path 'jni/Android.mk'
+        //}
+	   	cmake {
+			path 'jni/CMakeLists.txt'
+		}
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'com.google.android.material:material:1.13.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'androidx.core:core-splashscreen:1.2.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+}

@@ -1,0 +1,1578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB17A6A82EB6E42B006BC19C /* APP_sysinternals.m in Sources */ = {isa = PBXBuildFile; fileRef = EB17A6A72EB6E42B006BC19C /* APP_sysinternals.m */; platformFilters = (ios, maccatalyst, tvos, xros, ); };
+		EB17A6B52EB6E9B0006BC19C /* APP_sysinternals.m in Sources */ = {isa = PBXBuildFile; fileRef = EB17A6B42EB6E9B0006BC19C /* APP_sysinternals.m */; platformFilters = (macos, ); };
+		EB232A0E2EB6F07700C36EA5 /* SDL_app.h in Headers */ = {isa = PBXBuildFile; fileRef = EBA377222B0C27D4001427EA /* SDL_app.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A0F2EB6F07E00C36EA5 /* SDL.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6102EB6A82D006BC19C /* SDL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A102EB6F07E00C36EA5 /* SDL_assert.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6112EB6A82D006BC19C /* SDL_assert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A112EB6F07E00C36EA5 /* SDL_asyncio.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6122EB6A82D006BC19C /* SDL_asyncio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A122EB6F07E00C36EA5 /* SDL_atomic.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6132EB6A82D006BC19C /* SDL_atomic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A132EB6F07E00C36EA5 /* SDL_audio.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6142EB6A82D006BC19C /* SDL_audio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A142EB6F07E00C36EA5 /* SDL_begin_code.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6152EB6A82D006BC19C /* SDL_begin_code.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A152EB6F07E00C36EA5 /* SDL_bits.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6162EB6A82D006BC19C /* SDL_bits.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A162EB6F07E00C36EA5 /* SDL_blendmode.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6172EB6A82D006BC19C /* SDL_blendmode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A172EB6F07E00C36EA5 /* SDL_camera.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6182EB6A82D006BC19C /* SDL_camera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A182EB6F07E00C36EA5 /* SDL_clipboard.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6192EB6A82D006BC19C /* SDL_clipboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A192EB6F07E00C36EA5 /* SDL_close_code.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A61A2EB6A82D006BC19C /* SDL_close_code.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A1A2EB6F07E00C36EA5 /* SDL_copying.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A61B2EB6A82D006BC19C /* SDL_copying.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A1B2EB6F07E00C36EA5 /* SDL_cpuinfo.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A61C2EB6A82D006BC19C /* SDL_cpuinfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A1C2EB6F07E00C36EA5 /* SDL_dialog.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A61D2EB6A82D006BC19C /* SDL_dialog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A1D2EB6F07E00C36EA5 /* SDL_egl.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A61E2EB6A82D006BC19C /* SDL_egl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A1E2EB6F07E00C36EA5 /* SDL_endian.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A61F2EB6A82D006BC19C /* SDL_endian.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A1F2EB6F07E00C36EA5 /* SDL_error.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6202EB6A82D006BC19C /* SDL_error.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A202EB6F07E00C36EA5 /* SDL_events.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6212EB6A82D006BC19C /* SDL_events.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A212EB6F07E00C36EA5 /* SDL_filesystem.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6222EB6A82D006BC19C /* SDL_filesystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A222EB6F07E00C36EA5 /* SDL_gamepad.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6232EB6A82D006BC19C /* SDL_gamepad.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A232EB6F07E00C36EA5 /* SDL_gpu.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6242EB6A82D006BC19C /* SDL_gpu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A242EB6F07E00C36EA5 /* SDL_guid.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6252EB6A82D006BC19C /* SDL_guid.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A252EB6F07E00C36EA5 /* SDL_haptic.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6262EB6A82D006BC19C /* SDL_haptic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A262EB6F07E00C36EA5 /* SDL_hidapi.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6272EB6A82D006BC19C /* SDL_hidapi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A272EB6F07E00C36EA5 /* SDL_hints.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6282EB6A82D006BC19C /* SDL_hints.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A282EB6F07E00C36EA5 /* SDL_init.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6292EB6A82D006BC19C /* SDL_init.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A292EB6F07E00C36EA5 /* SDL_intrin.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A62A2EB6A82D006BC19C /* SDL_intrin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A2A2EB6F07E00C36EA5 /* SDL_iostream.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A62B2EB6A82D006BC19C /* SDL_iostream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A2B2EB6F07E00C36EA5 /* SDL_joystick.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A62C2EB6A82D006BC19C /* SDL_joystick.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A2C2EB6F07E00C36EA5 /* SDL_keyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A62D2EB6A82D006BC19C /* SDL_keyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A2D2EB6F07E00C36EA5 /* SDL_keycode.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A62E2EB6A82D006BC19C /* SDL_keycode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A2E2EB6F07E00C36EA5 /* SDL_loadso.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A62F2EB6A82D006BC19C /* SDL_loadso.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A2F2EB6F07E00C36EA5 /* SDL_locale.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6302EB6A82D006BC19C /* SDL_locale.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A302EB6F07E00C36EA5 /* SDL_log.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6312EB6A82D006BC19C /* SDL_log.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A312EB6F07E00C36EA5 /* SDL_main.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6322EB6A82D006BC19C /* SDL_main.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A322EB6F07E00C36EA5 /* SDL_main_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6332EB6A82D006BC19C /* SDL_main_impl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A332EB6F07E00C36EA5 /* SDL_messagebox.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6342EB6A82D006BC19C /* SDL_messagebox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A342EB6F07E00C36EA5 /* SDL_metal.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6352EB6A82D006BC19C /* SDL_metal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A352EB6F07E00C36EA5 /* SDL_misc.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6362EB6A82D006BC19C /* SDL_misc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A362EB6F07E00C36EA5 /* SDL_mouse.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6372EB6A82D006BC19C /* SDL_mouse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A372EB6F07E00C36EA5 /* SDL_mutex.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6382EB6A82D006BC19C /* SDL_mutex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A382EB6F07E00C36EA5 /* SDL_oldnames.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6392EB6A82D006BC19C /* SDL_oldnames.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A392EB6F07E00C36EA5 /* SDL_opengl.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A63A2EB6A82D006BC19C /* SDL_opengl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A3A2EB6F07E00C36EA5 /* SDL_opengl_glext.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A63B2EB6A82D006BC19C /* SDL_opengl_glext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A3B2EB6F07E00C36EA5 /* SDL_opengles.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A63C2EB6A82D006BC19C /* SDL_opengles.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A3C2EB6F07E00C36EA5 /* SDL_opengles2.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A63D2EB6A82D006BC19C /* SDL_opengles2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A3D2EB6F07E00C36EA5 /* SDL_opengles2_gl2.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A63E2EB6A82D006BC19C /* SDL_opengles2_gl2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A3E2EB6F07E00C36EA5 /* SDL_opengles2_gl2ext.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A63F2EB6A82D006BC19C /* SDL_opengles2_gl2ext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A3F2EB6F07E00C36EA5 /* SDL_opengles2_gl2platform.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6402EB6A82D006BC19C /* SDL_opengles2_gl2platform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A402EB6F07E00C36EA5 /* SDL_opengles2_khrplatform.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6412EB6A82D006BC19C /* SDL_opengles2_khrplatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A412EB6F07E00C36EA5 /* SDL_pen.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6422EB6A82D006BC19C /* SDL_pen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A422EB6F07E00C36EA5 /* SDL_pixels.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6432EB6A82D006BC19C /* SDL_pixels.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A432EB6F07E00C36EA5 /* SDL_platform.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6442EB6A82D006BC19C /* SDL_platform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A442EB6F07E00C36EA5 /* SDL_platform_defines.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6452EB6A82D006BC19C /* SDL_platform_defines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A452EB6F07E00C36EA5 /* SDL_power.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6462EB6A82D006BC19C /* SDL_power.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A462EB6F07E00C36EA5 /* SDL_process.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6472EB6A82D006BC19C /* SDL_process.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A472EB6F07E00C36EA5 /* SDL_properties.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6482EB6A82D006BC19C /* SDL_properties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A482EB6F07E00C36EA5 /* SDL_rect.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6492EB6A82D006BC19C /* SDL_rect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A492EB6F07E00C36EA5 /* SDL_render.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A64A2EB6A82D006BC19C /* SDL_render.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A4A2EB6F07E00C36EA5 /* SDL_revision.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A64B2EB6A82D006BC19C /* SDL_revision.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A4B2EB6F07E00C36EA5 /* SDL_scancode.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A64C2EB6A82D006BC19C /* SDL_scancode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A4C2EB6F07E00C36EA5 /* SDL_sensor.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A64D2EB6A82D006BC19C /* SDL_sensor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A4D2EB6F07E00C36EA5 /* SDL_stdinc.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A64E2EB6A82D006BC19C /* SDL_stdinc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A4E2EB6F07E00C36EA5 /* SDL_storage.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A64F2EB6A82D006BC19C /* SDL_storage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A4F2EB6F07E00C36EA5 /* SDL_surface.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6502EB6A82D006BC19C /* SDL_surface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A502EB6F07E00C36EA5 /* SDL_system.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6512EB6A82D006BC19C /* SDL_system.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A512EB6F07E00C36EA5 /* SDL_thread.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A65D2EB6A82D006BC19C /* SDL_thread.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A522EB6F07E00C36EA5 /* SDL_time.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A65E2EB6A82D006BC19C /* SDL_time.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A532EB6F07E00C36EA5 /* SDL_timer.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A65F2EB6A82D006BC19C /* SDL_timer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A542EB6F07E00C36EA5 /* SDL_touch.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6602EB6A82D006BC19C /* SDL_touch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A552EB6F07E00C36EA5 /* SDL_tray.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6612EB6A82D006BC19C /* SDL_tray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A562EB6F07E00C36EA5 /* SDL_version.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6622EB6A82D006BC19C /* SDL_version.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A572EB6F07E00C36EA5 /* SDL_video.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6632EB6A82D006BC19C /* SDL_video.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A582EB6F07E00C36EA5 /* SDL_vulkan.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6642EB6A82D006BC19C /* SDL_vulkan.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A592EB6F08600C36EA5 /* ATK_audio.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6652EB6A85C006BC19C /* ATK_audio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A5A2EB6F08600C36EA5 /* ATK_codec.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6662EB6A85C006BC19C /* ATK_codec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A5B2EB6F08600C36EA5 /* ATK_dsp.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6672EB6A85C006BC19C /* ATK_dsp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A5C2EB6F08600C36EA5 /* ATK_error.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6682EB6A85C006BC19C /* ATK_error.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A5D2EB6F08600C36EA5 /* ATK_file.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A6692EB6A85C006BC19C /* ATK_file.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A5E2EB6F08600C36EA5 /* ATK_math.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A66A2EB6A85C006BC19C /* ATK_math.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A5F2EB6F08600C36EA5 /* ATK_rand.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A66B2EB6A85C006BC19C /* ATK_rand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A602EB6F08600C36EA5 /* SDL_atk.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A66C2EB6A85C006BC19C /* SDL_atk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A612EB6F08C00C36EA5 /* SDL_image.h in Headers */ = {isa = PBXBuildFile; fileRef = EB17A66D2EB6A88B006BC19C /* SDL_image.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A642EB6F0B200C36EA5 /* SDL_ttf.h in Headers */ = {isa = PBXBuildFile; fileRef = EB232A632EB6F0B200C36EA5 /* SDL_ttf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A652EB6F0B200C36EA5 /* SDL_textengine.h in Headers */ = {isa = PBXBuildFile; fileRef = EB232A622EB6F0B200C36EA5 /* SDL_textengine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB232A662EB6F19100C36EA5 /* APP_sysdevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5150D52C32F1C900DA7B09 /* APP_sysdevice.m */; };
+		EB232A672EB6F19100C36EA5 /* APP_sysdevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5150FD2C3303C300DA7B09 /* APP_sysdevice.m */; };
+		EB232A682EB6F19100C36EA5 /* APP_device.c in Sources */ = {isa = PBXBuildFile; fileRef = EB5150D22C322B1C00DA7B09 /* APP_device.c */; };
+		EB232A692EB6F19100C36EA5 /* APP_display.c in Sources */ = {isa = PBXBuildFile; fileRef = EBA377502B0C2A4C001427EA /* APP_display.c */; };
+		EB232A6A2EB6F19100C36EA5 /* APP_sysdisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA377582B0C30B8001427EA /* APP_sysdisplay.m */; };
+		EB232A6B2EB6F19100C36EA5 /* APP_sysinternals.m in Sources */ = {isa = PBXBuildFile; fileRef = EB17A6B42EB6E9B0006BC19C /* APP_sysinternals.m */; platformFilters = (macos, ); };
+		EB232A6C2EB6F19100C36EA5 /* APP_sysdisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA3775A2B0C33DC001427EA /* APP_sysdisplay.m */; };
+		EB232A6D2EB6F19100C36EA5 /* APP_sysinternals.m in Sources */ = {isa = PBXBuildFile; fileRef = EB17A6A72EB6E42B006BC19C /* APP_sysinternals.m */; platformFilters = (ios, maccatalyst, tvos, xros, ); };
+		EB232A6E2EB6F19100C36EA5 /* APP_version.c in Sources */ = {isa = PBXBuildFile; fileRef = EBA3774D2B0C2A4C001427EA /* APP_version.c */; };
+		EB232A722EB6F1F200C36EA5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A6F2EB6F1F200C36EA5 /* AudioToolbox.framework */; };
+		EB232A732EB6F1F200C36EA5 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A702EB6F1F200C36EA5 /* ApplicationServices.framework */; platformFilters = (maccatalyst, macos, ); };
+		EB232A742EB6F1F200C36EA5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A712EB6F1F200C36EA5 /* AVFoundation.framework */; };
+		EB232A8D2EB6F27000C36EA5 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A752EB6F26E00C36EA5 /* UniformTypeIdentifiers.framework */; };
+		EB232A8E2EB6F27000C36EA5 /* CoreHaptics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A762EB6F26E00C36EA5 /* CoreHaptics.framework */; };
+		EB232A8F2EB6F27000C36EA5 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A772EB6F26E00C36EA5 /* ImageIO.framework */; };
+		EB232A902EB6F27000C36EA5 /* ForceFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A782EB6F26E00C36EA5 /* ForceFeedback.framework */; platformFilters = (macos, ); };
+		EB232A922EB6F27000C36EA5 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A7A2EB6F26E00C36EA5 /* CoreFoundation.framework */; };
+		EB232A932EB6F27000C36EA5 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A7B2EB6F26E00C36EA5 /* Carbon.framework */; platformFilters = (macos, ); };
+		EB232A942EB6F27000C36EA5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A7C2EB6F26E00C36EA5 /* Cocoa.framework */; platformFilters = (macos, ); };
+		EB232A952EB6F27000C36EA5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A7D2EB6F26F00C36EA5 /* OpenGLES.framework */; platformFilters = (ios, tvos, xros, ); };
+		EB232A962EB6F27000C36EA5 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A7E2EB6F26F00C36EA5 /* IOKit.framework */; };
+		EB232A972EB6F27000C36EA5 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A7F2EB6F26F00C36EA5 /* CoreAudio.framework */; };
+		EB232A982EB6F27000C36EA5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A802EB6F26F00C36EA5 /* QuartzCore.framework */; };
+		EB232A992EB6F27000C36EA5 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A812EB6F26F00C36EA5 /* Metal.framework */; };
+		EB232A9A2EB6F27000C36EA5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A822EB6F26F00C36EA5 /* CoreVideo.framework */; };
+		EB232A9B2EB6F27000C36EA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A832EB6F26F00C36EA5 /* CoreGraphics.framework */; };
+		EB232A9C2EB6F27000C36EA5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A842EB6F26F00C36EA5 /* MobileCoreServices.framework */; platformFilters = (ios, maccatalyst, tvos, xros, ); };
+		EB232A9D2EB6F27000C36EA5 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A852EB6F26F00C36EA5 /* CoreImage.framework */; };
+		EB232A9E2EB6F27000C36EA5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A862EB6F26F00C36EA5 /* OpenGL.framework */; platformFilters = (maccatalyst, macos, ); };
+		EB232A9F2EB6F27000C36EA5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A872EB6F26F00C36EA5 /* CoreMedia.framework */; };
+		EB232AA02EB6F27000C36EA5 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A882EB6F26F00C36EA5 /* CoreText.framework */; };
+		EB232AA12EB6F27000C36EA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A892EB6F26F00C36EA5 /* Foundation.framework */; };
+		EB232AA22EB6F27000C36EA5 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A8A2EB6F26F00C36EA5 /* CoreBluetooth.framework */; };
+		EB232AA32EB6F27000C36EA5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A8B2EB6F26F00C36EA5 /* CoreMotion.framework */; platformFilters = (ios, maccatalyst, macos, xros, ); };
+		EB232AA42EB6F27000C36EA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232A8C2EB6F27000C36EA5 /* UIKit.framework */; platformFilters = (ios, maccatalyst, tvos, xros, ); };
+		EB232AA62EB6F2D300C36EA5 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232AA52EB6F2D300C36EA5 /* GameController.framework */; };
+		EB232B482EB6F8ED00C36EA5 /* libsdl3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232AE62EB6F73400C36EA5 /* libsdl3.a */; };
+		EB232B492EB6F8ED00C36EA5 /* libsdl3atk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232AF12EB6F73400C36EA5 /* libsdl3atk.a */; };
+		EB232B4A2EB6F8ED00C36EA5 /* libsdl3image.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232B002EB6F73400C36EA5 /* libsdl3image.a */; };
+		EB232B4B2EB6F8ED00C36EA5 /* libsdl3ttf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232B032EB6F73400C36EA5 /* libsdl3ttf.a */; };
+		EB232B542EB6F91400C36EA5 /* libsdl3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232AE62EB6F73400C36EA5 /* libsdl3.a */; };
+		EB232B552EB6F91400C36EA5 /* libsdl3atk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232AF12EB6F73400C36EA5 /* libsdl3atk.a */; };
+		EB232B562EB6F91400C36EA5 /* libsdl3image.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232B002EB6F73400C36EA5 /* libsdl3image.a */; };
+		EB232B572EB6F91400C36EA5 /* libsdl3ttf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB232B032EB6F73400C36EA5 /* libsdl3ttf.a */; };
+		EB5150D32C322B1C00DA7B09 /* APP_device.c in Sources */ = {isa = PBXBuildFile; fileRef = EB5150D22C322B1C00DA7B09 /* APP_device.c */; };
+		EB5150D62C32F1C900DA7B09 /* APP_sysdevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5150D52C32F1C900DA7B09 /* APP_sysdevice.m */; };
+		EB669F352EABBC910018B866 /* APP_sysdevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5150FD2C3303C300DA7B09 /* APP_sysdevice.m */; };
+		EB669F362EABBC910018B866 /* APP_sysdisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA3775A2B0C33DC001427EA /* APP_sysdisplay.m */; };
+		EBA377512B0C2A4C001427EA /* APP_version.c in Sources */ = {isa = PBXBuildFile; fileRef = EBA3774D2B0C2A4C001427EA /* APP_version.c */; };
+		EBA377522B0C2A4C001427EA /* APP_display.c in Sources */ = {isa = PBXBuildFile; fileRef = EBA377502B0C2A4C001427EA /* APP_display.c */; };
+		EBA377592B0C30B8001427EA /* APP_sysdisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA377582B0C30B8001427EA /* APP_sysdisplay.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB232AE52EB6F73400C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669EFC2EABB7F00018B866 /* sdl3.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB7089351CD51810005B1025;
+			remoteInfo = sdl3;
+		};
+		EB232AE72EB6F73400C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669EFC2EABB7F00018B866 /* sdl3.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB669E3B2EAAC47E0018B866;
+			remoteInfo = sdl3test;
+		};
+		EB232AF02EB6F73400C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669EFF2EABB7F00018B866 /* sdl3atk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBFE90E82AFBF2480091303A;
+			remoteInfo = sdl3atk;
+		};
+		EB232AF22EB6F73400C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669EFF2EABB7F00018B866 /* sdl3atk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBFE91132AFC12270091303A;
+			remoteInfo = kissfft;
+		};
+		EB232AF42EB6F73400C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669EFF2EABB7F00018B866 /* sdl3atk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBA373442B0BF3D8001427EA;
+			remoteInfo = ogg;
+		};
+		EB232AF62EB6F73400C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669EFF2EABB7F00018B866 /* sdl3atk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBA373602B0BF828001427EA;
+			remoteInfo = FLAC;
+		};
+		EB232AF82EB6F73400C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669EFF2EABB7F00018B866 /* sdl3atk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBA3762F2B0BFCA2001427EA;
+			remoteInfo = vorbis;
+		};
+		EB232AFA2EB6F73400C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669EFF2EABB7F00018B866 /* sdl3atk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBA3763E2B0BFCB2001427EA;
+			remoteInfo = vorbisenc;
+		};
+		EB232AFC2EB6F73400C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669EFF2EABB7F00018B866 /* sdl3atk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBA3764D2B0BFCC0001427EA;
+			remoteInfo = vorbisfile;
+		};
+		EB232AFF2EB6F73400C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669F022EABB7F00018B866 /* sdl3image.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9941EE1D352B2600314460;
+			remoteInfo = sdl3image;
+		};
+		EB232B022EB6F73400C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669F052EABB7F00018B866 /* sdl3ttf.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB88EF5E23D96452009989BA;
+			remoteInfo = sdl3ttf;
+		};
+		EB232B402EB6F8E000C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669EFC2EABB7F00018B866 /* sdl3.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EB7089341CD51810005B1025;
+			remoteInfo = sdl3;
+		};
+		EB232B422EB6F8E000C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669EFF2EABB7F00018B866 /* sdl3atk.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EBFE90E72AFBF2480091303A;
+			remoteInfo = sdl3atk;
+		};
+		EB232B442EB6F8E000C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669F022EABB7F00018B866 /* sdl3image.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EB9941ED1D352B2600314460;
+			remoteInfo = sdl3image;
+		};
+		EB232B462EB6F8E000C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669F052EABB7F00018B866 /* sdl3ttf.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EB88EF5D23D96452009989BA;
+			remoteInfo = sdl3ttf;
+		};
+		EB232B4C2EB6F90800C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669EFC2EABB7F00018B866 /* sdl3.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EB7089341CD51810005B1025;
+			remoteInfo = sdl3;
+		};
+		EB232B4E2EB6F90800C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669EFF2EABB7F00018B866 /* sdl3atk.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EBFE90E72AFBF2480091303A;
+			remoteInfo = sdl3atk;
+		};
+		EB232B502EB6F90800C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669F022EABB7F00018B866 /* sdl3image.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EB9941ED1D352B2600314460;
+			remoteInfo = sdl3image;
+		};
+		EB232B522EB6F90800C36EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB669F052EABB7F00018B866 /* sdl3ttf.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EB88EF5D23D96452009989BA;
+			remoteInfo = sdl3ttf;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EB17A6102EB6A82D006BC19C /* SDL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL.h; sourceTree = "<group>"; };
+		EB17A6112EB6A82D006BC19C /* SDL_assert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_assert.h; sourceTree = "<group>"; };
+		EB17A6122EB6A82D006BC19C /* SDL_asyncio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_asyncio.h; sourceTree = "<group>"; };
+		EB17A6132EB6A82D006BC19C /* SDL_atomic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_atomic.h; sourceTree = "<group>"; };
+		EB17A6142EB6A82D006BC19C /* SDL_audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_audio.h; sourceTree = "<group>"; };
+		EB17A6152EB6A82D006BC19C /* SDL_begin_code.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_begin_code.h; sourceTree = "<group>"; };
+		EB17A6162EB6A82D006BC19C /* SDL_bits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_bits.h; sourceTree = "<group>"; };
+		EB17A6172EB6A82D006BC19C /* SDL_blendmode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_blendmode.h; sourceTree = "<group>"; };
+		EB17A6182EB6A82D006BC19C /* SDL_camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_camera.h; sourceTree = "<group>"; };
+		EB17A6192EB6A82D006BC19C /* SDL_clipboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_clipboard.h; sourceTree = "<group>"; };
+		EB17A61A2EB6A82D006BC19C /* SDL_close_code.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_close_code.h; sourceTree = "<group>"; };
+		EB17A61B2EB6A82D006BC19C /* SDL_copying.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_copying.h; sourceTree = "<group>"; };
+		EB17A61C2EB6A82D006BC19C /* SDL_cpuinfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_cpuinfo.h; sourceTree = "<group>"; };
+		EB17A61D2EB6A82D006BC19C /* SDL_dialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_dialog.h; sourceTree = "<group>"; };
+		EB17A61E2EB6A82D006BC19C /* SDL_egl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_egl.h; sourceTree = "<group>"; };
+		EB17A61F2EB6A82D006BC19C /* SDL_endian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_endian.h; sourceTree = "<group>"; };
+		EB17A6202EB6A82D006BC19C /* SDL_error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_error.h; sourceTree = "<group>"; };
+		EB17A6212EB6A82D006BC19C /* SDL_events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_events.h; sourceTree = "<group>"; };
+		EB17A6222EB6A82D006BC19C /* SDL_filesystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_filesystem.h; sourceTree = "<group>"; };
+		EB17A6232EB6A82D006BC19C /* SDL_gamepad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_gamepad.h; sourceTree = "<group>"; };
+		EB17A6242EB6A82D006BC19C /* SDL_gpu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_gpu.h; sourceTree = "<group>"; };
+		EB17A6252EB6A82D006BC19C /* SDL_guid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_guid.h; sourceTree = "<group>"; };
+		EB17A6262EB6A82D006BC19C /* SDL_haptic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_haptic.h; sourceTree = "<group>"; };
+		EB17A6272EB6A82D006BC19C /* SDL_hidapi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_hidapi.h; sourceTree = "<group>"; };
+		EB17A6282EB6A82D006BC19C /* SDL_hints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_hints.h; sourceTree = "<group>"; };
+		EB17A6292EB6A82D006BC19C /* SDL_init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_init.h; sourceTree = "<group>"; };
+		EB17A62A2EB6A82D006BC19C /* SDL_intrin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_intrin.h; sourceTree = "<group>"; };
+		EB17A62B2EB6A82D006BC19C /* SDL_iostream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_iostream.h; sourceTree = "<group>"; };
+		EB17A62C2EB6A82D006BC19C /* SDL_joystick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_joystick.h; sourceTree = "<group>"; };
+		EB17A62D2EB6A82D006BC19C /* SDL_keyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_keyboard.h; sourceTree = "<group>"; };
+		EB17A62E2EB6A82D006BC19C /* SDL_keycode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_keycode.h; sourceTree = "<group>"; };
+		EB17A62F2EB6A82D006BC19C /* SDL_loadso.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_loadso.h; sourceTree = "<group>"; };
+		EB17A6302EB6A82D006BC19C /* SDL_locale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_locale.h; sourceTree = "<group>"; };
+		EB17A6312EB6A82D006BC19C /* SDL_log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_log.h; sourceTree = "<group>"; };
+		EB17A6322EB6A82D006BC19C /* SDL_main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_main.h; sourceTree = "<group>"; };
+		EB17A6332EB6A82D006BC19C /* SDL_main_impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_main_impl.h; sourceTree = "<group>"; };
+		EB17A6342EB6A82D006BC19C /* SDL_messagebox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_messagebox.h; sourceTree = "<group>"; };
+		EB17A6352EB6A82D006BC19C /* SDL_metal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_metal.h; sourceTree = "<group>"; };
+		EB17A6362EB6A82D006BC19C /* SDL_misc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_misc.h; sourceTree = "<group>"; };
+		EB17A6372EB6A82D006BC19C /* SDL_mouse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_mouse.h; sourceTree = "<group>"; };
+		EB17A6382EB6A82D006BC19C /* SDL_mutex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_mutex.h; sourceTree = "<group>"; };
+		EB17A6392EB6A82D006BC19C /* SDL_oldnames.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_oldnames.h; sourceTree = "<group>"; };
+		EB17A63A2EB6A82D006BC19C /* SDL_opengl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_opengl.h; sourceTree = "<group>"; };
+		EB17A63B2EB6A82D006BC19C /* SDL_opengl_glext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_opengl_glext.h; sourceTree = "<group>"; };
+		EB17A63C2EB6A82D006BC19C /* SDL_opengles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_opengles.h; sourceTree = "<group>"; };
+		EB17A63D2EB6A82D006BC19C /* SDL_opengles2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_opengles2.h; sourceTree = "<group>"; };
+		EB17A63E2EB6A82D006BC19C /* SDL_opengles2_gl2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_opengles2_gl2.h; sourceTree = "<group>"; };
+		EB17A63F2EB6A82D006BC19C /* SDL_opengles2_gl2ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_opengles2_gl2ext.h; sourceTree = "<group>"; };
+		EB17A6402EB6A82D006BC19C /* SDL_opengles2_gl2platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_opengles2_gl2platform.h; sourceTree = "<group>"; };
+		EB17A6412EB6A82D006BC19C /* SDL_opengles2_khrplatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_opengles2_khrplatform.h; sourceTree = "<group>"; };
+		EB17A6422EB6A82D006BC19C /* SDL_pen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_pen.h; sourceTree = "<group>"; };
+		EB17A6432EB6A82D006BC19C /* SDL_pixels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_pixels.h; sourceTree = "<group>"; };
+		EB17A6442EB6A82D006BC19C /* SDL_platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_platform.h; sourceTree = "<group>"; };
+		EB17A6452EB6A82D006BC19C /* SDL_platform_defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_platform_defines.h; sourceTree = "<group>"; };
+		EB17A6462EB6A82D006BC19C /* SDL_power.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_power.h; sourceTree = "<group>"; };
+		EB17A6472EB6A82D006BC19C /* SDL_process.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_process.h; sourceTree = "<group>"; };
+		EB17A6482EB6A82D006BC19C /* SDL_properties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_properties.h; sourceTree = "<group>"; };
+		EB17A6492EB6A82D006BC19C /* SDL_rect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_rect.h; sourceTree = "<group>"; };
+		EB17A64A2EB6A82D006BC19C /* SDL_render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_render.h; sourceTree = "<group>"; };
+		EB17A64B2EB6A82D006BC19C /* SDL_revision.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_revision.h; sourceTree = "<group>"; };
+		EB17A64C2EB6A82D006BC19C /* SDL_scancode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_scancode.h; sourceTree = "<group>"; };
+		EB17A64D2EB6A82D006BC19C /* SDL_sensor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_sensor.h; sourceTree = "<group>"; };
+		EB17A64E2EB6A82D006BC19C /* SDL_stdinc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_stdinc.h; sourceTree = "<group>"; };
+		EB17A64F2EB6A82D006BC19C /* SDL_storage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_storage.h; sourceTree = "<group>"; };
+		EB17A6502EB6A82D006BC19C /* SDL_surface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_surface.h; sourceTree = "<group>"; };
+		EB17A6512EB6A82D006BC19C /* SDL_system.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_system.h; sourceTree = "<group>"; };
+		EB17A65D2EB6A82D006BC19C /* SDL_thread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_thread.h; sourceTree = "<group>"; };
+		EB17A65E2EB6A82D006BC19C /* SDL_time.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_time.h; sourceTree = "<group>"; };
+		EB17A65F2EB6A82D006BC19C /* SDL_timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_timer.h; sourceTree = "<group>"; };
+		EB17A6602EB6A82D006BC19C /* SDL_touch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_touch.h; sourceTree = "<group>"; };
+		EB17A6612EB6A82D006BC19C /* SDL_tray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_tray.h; sourceTree = "<group>"; };
+		EB17A6622EB6A82D006BC19C /* SDL_version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_version.h; sourceTree = "<group>"; };
+		EB17A6632EB6A82D006BC19C /* SDL_video.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_video.h; sourceTree = "<group>"; };
+		EB17A6642EB6A82D006BC19C /* SDL_vulkan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_vulkan.h; sourceTree = "<group>"; };
+		EB17A6652EB6A85C006BC19C /* ATK_audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATK_audio.h; sourceTree = "<group>"; };
+		EB17A6662EB6A85C006BC19C /* ATK_codec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATK_codec.h; sourceTree = "<group>"; };
+		EB17A6672EB6A85C006BC19C /* ATK_dsp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATK_dsp.h; sourceTree = "<group>"; };
+		EB17A6682EB6A85C006BC19C /* ATK_error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATK_error.h; sourceTree = "<group>"; };
+		EB17A6692EB6A85C006BC19C /* ATK_file.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATK_file.h; sourceTree = "<group>"; };
+		EB17A66A2EB6A85C006BC19C /* ATK_math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATK_math.h; sourceTree = "<group>"; };
+		EB17A66B2EB6A85C006BC19C /* ATK_rand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATK_rand.h; sourceTree = "<group>"; };
+		EB17A66C2EB6A85C006BC19C /* SDL_atk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_atk.h; sourceTree = "<group>"; };
+		EB17A66D2EB6A88B006BC19C /* SDL_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_image.h; sourceTree = "<group>"; };
+		EB17A6A62EB6E415006BC19C /* APP_sysinternals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APP_sysinternals.h; sourceTree = "<group>"; };
+		EB17A6A72EB6E42B006BC19C /* APP_sysinternals.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APP_sysinternals.m; sourceTree = "<group>"; };
+		EB17A6B42EB6E9B0006BC19C /* APP_sysinternals.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APP_sysinternals.m; sourceTree = "<group>"; };
+		EB17A6B62EB6E9CB006BC19C /* APP_sysinternals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APP_sysinternals.h; sourceTree = "<group>"; };
+		EB17A6BC2EB6EC72006BC19C /* SDL3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDL3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB232A622EB6F0B200C36EA5 /* SDL_textengine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_textengine.h; sourceTree = "<group>"; };
+		EB232A632EB6F0B200C36EA5 /* SDL_ttf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_ttf.h; sourceTree = "<group>"; };
+		EB232A6F2EB6F1F200C36EA5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EB232A702EB6F1F200C36EA5 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		EB232A712EB6F1F200C36EA5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EB232A752EB6F26E00C36EA5 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
+		EB232A762EB6F26E00C36EA5 /* CoreHaptics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreHaptics.framework; path = System/Library/Frameworks/CoreHaptics.framework; sourceTree = SDKROOT; };
+		EB232A772EB6F26E00C36EA5 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		EB232A782EB6F26E00C36EA5 /* ForceFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ForceFeedback.framework; path = System/Library/Frameworks/ForceFeedback.framework; sourceTree = SDKROOT; };
+		EB232A7A2EB6F26E00C36EA5 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		EB232A7B2EB6F26E00C36EA5 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		EB232A7C2EB6F26E00C36EA5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EB232A7D2EB6F26F00C36EA5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS18.2.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		EB232A7E2EB6F26F00C36EA5 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		EB232A7F2EB6F26F00C36EA5 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		EB232A802EB6F26F00C36EA5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EB232A812EB6F26F00C36EA5 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		EB232A822EB6F26F00C36EA5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		EB232A832EB6F26F00C36EA5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EB232A842EB6F26F00C36EA5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/iOSSupport/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		EB232A852EB6F26F00C36EA5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		EB232A862EB6F26F00C36EA5 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		EB232A872EB6F26F00C36EA5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		EB232A882EB6F26F00C36EA5 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		EB232A892EB6F26F00C36EA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EB232A8A2EB6F26F00C36EA5 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		EB232A8B2EB6F26F00C36EA5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		EB232A8C2EB6F27000C36EA5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/iOSSupport/System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EB232AA52EB6F2D300C36EA5 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		EB5150D12C322B1C00DA7B09 /* APP_sysdevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APP_sysdevice.h; sourceTree = "<group>"; };
+		EB5150D22C322B1C00DA7B09 /* APP_device.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = APP_device.c; sourceTree = "<group>"; };
+		EB5150D52C32F1C900DA7B09 /* APP_sysdevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APP_sysdevice.m; sourceTree = "<group>"; };
+		EB5150FD2C3303C300DA7B09 /* APP_sysdevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APP_sysdevice.m; sourceTree = "<group>"; };
+		EB5151262C331EF400DA7B09 /* APP_sysdevice.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = APP_sysdevice.c; sourceTree = "<group>"; };
+		EB669EFC2EABB7F00018B866 /* sdl3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = sdl3.xcodeproj; sourceTree = SOURCE_ROOT; };
+		EB669EFF2EABB7F00018B866 /* sdl3atk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = sdl3atk.xcodeproj; sourceTree = SOURCE_ROOT; };
+		EB669F022EABB7F00018B866 /* sdl3image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = sdl3image.xcodeproj; sourceTree = SOURCE_ROOT; };
+		EB669F052EABB7F00018B866 /* sdl3ttf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = sdl3ttf.xcodeproj; sourceTree = SOURCE_ROOT; };
+		EB7089351CD51810005B1025 /* libsdl3app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libsdl3app.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBA377222B0C27D4001427EA /* SDL_app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL_app.h; sourceTree = "<group>"; };
+		EBA3774D2B0C2A4C001427EA /* APP_version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = APP_version.c; sourceTree = "<group>"; };
+		EBA3774E2B0C2A4C001427EA /* APP_sysdisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APP_sysdisplay.h; sourceTree = "<group>"; };
+		EBA377502B0C2A4C001427EA /* APP_display.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = APP_display.c; sourceTree = "<group>"; };
+		EBA377562B0C30A8001427EA /* APP_sysdisplay.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = APP_sysdisplay.c; sourceTree = "<group>"; };
+		EBA377582B0C30B8001427EA /* APP_sysdisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APP_sysdisplay.m; sourceTree = "<group>"; };
+		EBA3775A2B0C33DC001427EA /* APP_sysdisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APP_sysdisplay.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB17A6B92EB6EC72006BC19C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB232B542EB6F91400C36EA5 /* libsdl3.a in Frameworks */,
+				EB232B552EB6F91400C36EA5 /* libsdl3atk.a in Frameworks */,
+				EB232B562EB6F91400C36EA5 /* libsdl3image.a in Frameworks */,
+				EB232B572EB6F91400C36EA5 /* libsdl3ttf.a in Frameworks */,
+				EB232A732EB6F1F200C36EA5 /* ApplicationServices.framework in Frameworks */,
+				EB232A722EB6F1F200C36EA5 /* AudioToolbox.framework in Frameworks */,
+				EB232A742EB6F1F200C36EA5 /* AVFoundation.framework in Frameworks */,
+				EB232A932EB6F27000C36EA5 /* Carbon.framework in Frameworks */,
+				EB232A942EB6F27000C36EA5 /* Cocoa.framework in Frameworks */,
+				EB232A972EB6F27000C36EA5 /* CoreAudio.framework in Frameworks */,
+				EB232AA22EB6F27000C36EA5 /* CoreBluetooth.framework in Frameworks */,
+				EB232A9B2EB6F27000C36EA5 /* CoreGraphics.framework in Frameworks */,
+				EB232A922EB6F27000C36EA5 /* CoreFoundation.framework in Frameworks */,
+				EB232AA32EB6F27000C36EA5 /* CoreMotion.framework in Frameworks */,
+				EB232A9D2EB6F27000C36EA5 /* CoreImage.framework in Frameworks */,
+				EB232A8E2EB6F27000C36EA5 /* CoreHaptics.framework in Frameworks */,
+				EB232A9F2EB6F27000C36EA5 /* CoreMedia.framework in Frameworks */,
+				EB232AA02EB6F27000C36EA5 /* CoreText.framework in Frameworks */,
+				EB232A9A2EB6F27000C36EA5 /* CoreVideo.framework in Frameworks */,
+				EB232A902EB6F27000C36EA5 /* ForceFeedback.framework in Frameworks */,
+				EB232AA12EB6F27000C36EA5 /* Foundation.framework in Frameworks */,
+				EB232AA62EB6F2D300C36EA5 /* GameController.framework in Frameworks */,
+				EB232A8F2EB6F27000C36EA5 /* ImageIO.framework in Frameworks */,
+				EB232A962EB6F27000C36EA5 /* IOKit.framework in Frameworks */,
+				EB232A992EB6F27000C36EA5 /* Metal.framework in Frameworks */,
+				EB232A9C2EB6F27000C36EA5 /* MobileCoreServices.framework in Frameworks */,
+				EB232A9E2EB6F27000C36EA5 /* OpenGL.framework in Frameworks */,
+				EB232A952EB6F27000C36EA5 /* OpenGLES.framework in Frameworks */,
+				EB232A982EB6F27000C36EA5 /* QuartzCore.framework in Frameworks */,
+				EB232AA42EB6F27000C36EA5 /* UIKit.framework in Frameworks */,
+				EB232A8D2EB6F27000C36EA5 /* UniformTypeIdentifiers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB7089321CD51810005B1025 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB232B482EB6F8ED00C36EA5 /* libsdl3.a in Frameworks */,
+				EB232B492EB6F8ED00C36EA5 /* libsdl3atk.a in Frameworks */,
+				EB232B4A2EB6F8ED00C36EA5 /* libsdl3image.a in Frameworks */,
+				EB232B4B2EB6F8ED00C36EA5 /* libsdl3ttf.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB17A6032EB6A778006BC19C /* SDL_app */ = {
+			isa = PBXGroup;
+			children = (
+				EBA377222B0C27D4001427EA /* SDL_app.h */,
+			);
+			name = SDL_app;
+			sourceTree = "<group>";
+		};
+		EB17A60B2EB6A7AD006BC19C /* SDL */ = {
+			isa = PBXGroup;
+			children = (
+				EB17A6102EB6A82D006BC19C /* SDL.h */,
+				EB17A6112EB6A82D006BC19C /* SDL_assert.h */,
+				EB17A6122EB6A82D006BC19C /* SDL_asyncio.h */,
+				EB17A6132EB6A82D006BC19C /* SDL_atomic.h */,
+				EB17A6142EB6A82D006BC19C /* SDL_audio.h */,
+				EB17A6152EB6A82D006BC19C /* SDL_begin_code.h */,
+				EB17A6162EB6A82D006BC19C /* SDL_bits.h */,
+				EB17A6172EB6A82D006BC19C /* SDL_blendmode.h */,
+				EB17A6182EB6A82D006BC19C /* SDL_camera.h */,
+				EB17A6192EB6A82D006BC19C /* SDL_clipboard.h */,
+				EB17A61A2EB6A82D006BC19C /* SDL_close_code.h */,
+				EB17A61B2EB6A82D006BC19C /* SDL_copying.h */,
+				EB17A61C2EB6A82D006BC19C /* SDL_cpuinfo.h */,
+				EB17A61D2EB6A82D006BC19C /* SDL_dialog.h */,
+				EB17A61E2EB6A82D006BC19C /* SDL_egl.h */,
+				EB17A61F2EB6A82D006BC19C /* SDL_endian.h */,
+				EB17A6202EB6A82D006BC19C /* SDL_error.h */,
+				EB17A6212EB6A82D006BC19C /* SDL_events.h */,
+				EB17A6222EB6A82D006BC19C /* SDL_filesystem.h */,
+				EB17A6232EB6A82D006BC19C /* SDL_gamepad.h */,
+				EB17A6242EB6A82D006BC19C /* SDL_gpu.h */,
+				EB17A6252EB6A82D006BC19C /* SDL_guid.h */,
+				EB17A6262EB6A82D006BC19C /* SDL_haptic.h */,
+				EB17A6272EB6A82D006BC19C /* SDL_hidapi.h */,
+				EB17A6282EB6A82D006BC19C /* SDL_hints.h */,
+				EB17A6292EB6A82D006BC19C /* SDL_init.h */,
+				EB17A62A2EB6A82D006BC19C /* SDL_intrin.h */,
+				EB17A62B2EB6A82D006BC19C /* SDL_iostream.h */,
+				EB17A62C2EB6A82D006BC19C /* SDL_joystick.h */,
+				EB17A62D2EB6A82D006BC19C /* SDL_keyboard.h */,
+				EB17A62E2EB6A82D006BC19C /* SDL_keycode.h */,
+				EB17A62F2EB6A82D006BC19C /* SDL_loadso.h */,
+				EB17A6302EB6A82D006BC19C /* SDL_locale.h */,
+				EB17A6312EB6A82D006BC19C /* SDL_log.h */,
+				EB17A6322EB6A82D006BC19C /* SDL_main.h */,
+				EB17A6332EB6A82D006BC19C /* SDL_main_impl.h */,
+				EB17A6342EB6A82D006BC19C /* SDL_messagebox.h */,
+				EB17A6352EB6A82D006BC19C /* SDL_metal.h */,
+				EB17A6362EB6A82D006BC19C /* SDL_misc.h */,
+				EB17A6372EB6A82D006BC19C /* SDL_mouse.h */,
+				EB17A6382EB6A82D006BC19C /* SDL_mutex.h */,
+				EB17A6392EB6A82D006BC19C /* SDL_oldnames.h */,
+				EB17A63A2EB6A82D006BC19C /* SDL_opengl.h */,
+				EB17A63B2EB6A82D006BC19C /* SDL_opengl_glext.h */,
+				EB17A63C2EB6A82D006BC19C /* SDL_opengles.h */,
+				EB17A63D2EB6A82D006BC19C /* SDL_opengles2.h */,
+				EB17A63E2EB6A82D006BC19C /* SDL_opengles2_gl2.h */,
+				EB17A63F2EB6A82D006BC19C /* SDL_opengles2_gl2ext.h */,
+				EB17A6402EB6A82D006BC19C /* SDL_opengles2_gl2platform.h */,
+				EB17A6412EB6A82D006BC19C /* SDL_opengles2_khrplatform.h */,
+				EB17A6422EB6A82D006BC19C /* SDL_pen.h */,
+				EB17A6432EB6A82D006BC19C /* SDL_pixels.h */,
+				EB17A6442EB6A82D006BC19C /* SDL_platform.h */,
+				EB17A6452EB6A82D006BC19C /* SDL_platform_defines.h */,
+				EB17A6462EB6A82D006BC19C /* SDL_power.h */,
+				EB17A6472EB6A82D006BC19C /* SDL_process.h */,
+				EB17A6482EB6A82D006BC19C /* SDL_properties.h */,
+				EB17A6492EB6A82D006BC19C /* SDL_rect.h */,
+				EB17A64A2EB6A82D006BC19C /* SDL_render.h */,
+				EB17A64B2EB6A82D006BC19C /* SDL_revision.h */,
+				EB17A64C2EB6A82D006BC19C /* SDL_scancode.h */,
+				EB17A64D2EB6A82D006BC19C /* SDL_sensor.h */,
+				EB17A64E2EB6A82D006BC19C /* SDL_stdinc.h */,
+				EB17A64F2EB6A82D006BC19C /* SDL_storage.h */,
+				EB17A6502EB6A82D006BC19C /* SDL_surface.h */,
+				EB17A6512EB6A82D006BC19C /* SDL_system.h */,
+				EB17A65D2EB6A82D006BC19C /* SDL_thread.h */,
+				EB17A65E2EB6A82D006BC19C /* SDL_time.h */,
+				EB17A65F2EB6A82D006BC19C /* SDL_timer.h */,
+				EB17A6602EB6A82D006BC19C /* SDL_touch.h */,
+				EB17A6612EB6A82D006BC19C /* SDL_tray.h */,
+				EB17A6622EB6A82D006BC19C /* SDL_version.h */,
+				EB17A6632EB6A82D006BC19C /* SDL_video.h */,
+				EB17A6642EB6A82D006BC19C /* SDL_vulkan.h */,
+			);
+			name = SDL;
+			sourceTree = "<group>";
+		};
+		EB17A60D2EB6A7C4006BC19C /* SDL_image */ = {
+			isa = PBXGroup;
+			children = (
+				EB17A66D2EB6A88B006BC19C /* SDL_image.h */,
+			);
+			name = SDL_image;
+			sourceTree = "<group>";
+		};
+		EB17A60E2EB6A7D2006BC19C /* SDL_atk */ = {
+			isa = PBXGroup;
+			children = (
+				EB17A6652EB6A85C006BC19C /* ATK_audio.h */,
+				EB17A6662EB6A85C006BC19C /* ATK_codec.h */,
+				EB17A6672EB6A85C006BC19C /* ATK_dsp.h */,
+				EB17A6682EB6A85C006BC19C /* ATK_error.h */,
+				EB17A6692EB6A85C006BC19C /* ATK_file.h */,
+				EB17A66A2EB6A85C006BC19C /* ATK_math.h */,
+				EB17A66B2EB6A85C006BC19C /* ATK_rand.h */,
+				EB17A66C2EB6A85C006BC19C /* SDL_atk.h */,
+			);
+			name = SDL_atk;
+			sourceTree = "<group>";
+		};
+		EB17A60F2EB6A7F4006BC19C /* SDL_ttf */ = {
+			isa = PBXGroup;
+			children = (
+				EB232A622EB6F0B200C36EA5 /* SDL_textengine.h */,
+				EB232A632EB6F0B200C36EA5 /* SDL_ttf.h */,
+			);
+			name = SDL_ttf;
+			sourceTree = "<group>";
+		};
+		EB17A6982EB6AE21006BC19C /* display */ = {
+			isa = PBXGroup;
+			children = (
+				EBA3774E2B0C2A4C001427EA /* APP_sysdisplay.h */,
+				EBA377502B0C2A4C001427EA /* APP_display.c */,
+				EBA3774C2B0C2A2A001427EA /* appkit */,
+				EBA377552B0C3092001427EA /* dummy */,
+				EBA3774B2B0C2A23001427EA /* uikit */,
+			);
+			path = display;
+			sourceTree = "<group>";
+		};
+		EB17A6A02EB6AE29006BC19C /* device */ = {
+			isa = PBXGroup;
+			children = (
+				EB5150D12C322B1C00DA7B09 /* APP_sysdevice.h */,
+				EB5150D22C322B1C00DA7B09 /* APP_device.c */,
+				EB17A6A32EB6B1FD006BC19C /* appkit */,
+				EB17A6A22EB6B1F3006BC19C /* dummy */,
+				EB17A6A12EB6B1EB006BC19C /* uikit */,
+			);
+			path = device;
+			sourceTree = "<group>";
+		};
+		EB17A6A12EB6B1EB006BC19C /* uikit */ = {
+			isa = PBXGroup;
+			children = (
+				EB5150FD2C3303C300DA7B09 /* APP_sysdevice.m */,
+			);
+			path = uikit;
+			sourceTree = "<group>";
+		};
+		EB17A6A22EB6B1F3006BC19C /* dummy */ = {
+			isa = PBXGroup;
+			children = (
+				EB5151262C331EF400DA7B09 /* APP_sysdevice.c */,
+			);
+			path = dummy;
+			sourceTree = "<group>";
+		};
+		EB17A6A32EB6B1FD006BC19C /* appkit */ = {
+			isa = PBXGroup;
+			children = (
+				EB5150D52C32F1C900DA7B09 /* APP_sysdevice.m */,
+			);
+			path = appkit;
+			sourceTree = "<group>";
+		};
+		EB232ADB2EB6F73400C36EA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB232AE62EB6F73400C36EA5 /* libsdl3.a */,
+				EB232AE82EB6F73400C36EA5 /* libsdl3test.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB232ADD2EB6F73400C36EA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB232B032EB6F73400C36EA5 /* libsdl3ttf.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB232ADF2EB6F73400C36EA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB232AF12EB6F73400C36EA5 /* libsdl3atk.a */,
+				EB232AF32EB6F73400C36EA5 /* libkissfft.a */,
+				EB232AF52EB6F73400C36EA5 /* libogg.a */,
+				EB232AF72EB6F73400C36EA5 /* libFLAC.a */,
+				EB232AF92EB6F73400C36EA5 /* libvorbis.a */,
+				EB232AFB2EB6F73400C36EA5 /* libvorbisenc.a */,
+				EB232AFD2EB6F73400C36EA5 /* libvorbisfile.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB232AE12EB6F73400C36EA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB232B002EB6F73400C36EA5 /* libsdl3image.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBA377202B0C2793001427EA /* include */ = {
+			isa = PBXGroup;
+			children = (
+				EB17A6032EB6A778006BC19C /* SDL_app */,
+				EB17A60B2EB6A7AD006BC19C /* SDL */,
+				EB17A60E2EB6A7D2006BC19C /* SDL_atk */,
+				EB17A60D2EB6A7C4006BC19C /* SDL_image */,
+				EB17A60F2EB6A7F4006BC19C /* SDL_ttf */,
+			);
+			name = include;
+			path = ../../include/SDL3;
+			sourceTree = "<group>";
+		};
+		EBA377212B0C27B6001427EA /* source */ = {
+			isa = PBXGroup;
+			children = (
+				EB17A6A02EB6AE29006BC19C /* device */,
+				EB17A6982EB6AE21006BC19C /* display */,
+				EBA3774D2B0C2A4C001427EA /* APP_version.c */,
+			);
+			name = source;
+			path = ../../src/app;
+			sourceTree = "<group>";
+		};
+		EBA3774B2B0C2A23001427EA /* uikit */ = {
+			isa = PBXGroup;
+			children = (
+				EBA3775A2B0C33DC001427EA /* APP_sysdisplay.m */,
+				EB17A6A72EB6E42B006BC19C /* APP_sysinternals.m */,
+				EB17A6A62EB6E415006BC19C /* APP_sysinternals.h */,
+			);
+			path = uikit;
+			sourceTree = "<group>";
+		};
+		EBA3774C2B0C2A2A001427EA /* appkit */ = {
+			isa = PBXGroup;
+			children = (
+				EBA377582B0C30B8001427EA /* APP_sysdisplay.m */,
+				EB17A6B42EB6E9B0006BC19C /* APP_sysinternals.m */,
+				EB17A6B62EB6E9CB006BC19C /* APP_sysinternals.h */,
+			);
+			path = appkit;
+			sourceTree = "<group>";
+		};
+		EBA377552B0C3092001427EA /* dummy */ = {
+			isa = PBXGroup;
+			children = (
+				EBA377562B0C30A8001427EA /* APP_sysdisplay.c */,
+			);
+			path = dummy;
+			sourceTree = "<group>";
+		};
+		EBB10C32293D679700F11D7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB232A702EB6F1F200C36EA5 /* ApplicationServices.framework */,
+				EB232A6F2EB6F1F200C36EA5 /* AudioToolbox.framework */,
+				EB232A712EB6F1F200C36EA5 /* AVFoundation.framework */,
+				EB232A7B2EB6F26E00C36EA5 /* Carbon.framework */,
+				EB232A7C2EB6F26E00C36EA5 /* Cocoa.framework */,
+				EB232A7F2EB6F26F00C36EA5 /* CoreAudio.framework */,
+				EB232A8A2EB6F26F00C36EA5 /* CoreBluetooth.framework */,
+				EB232A7A2EB6F26E00C36EA5 /* CoreFoundation.framework */,
+				EB232A832EB6F26F00C36EA5 /* CoreGraphics.framework */,
+				EB232A762EB6F26E00C36EA5 /* CoreHaptics.framework */,
+				EB232A852EB6F26F00C36EA5 /* CoreImage.framework */,
+				EB232A872EB6F26F00C36EA5 /* CoreMedia.framework */,
+				EB232A8B2EB6F26F00C36EA5 /* CoreMotion.framework */,
+				EB232A882EB6F26F00C36EA5 /* CoreText.framework */,
+				EB232A822EB6F26F00C36EA5 /* CoreVideo.framework */,
+				EB232A782EB6F26E00C36EA5 /* ForceFeedback.framework */,
+				EB232A892EB6F26F00C36EA5 /* Foundation.framework */,
+				EB232AA52EB6F2D300C36EA5 /* GameController.framework */,
+				EB232A772EB6F26E00C36EA5 /* ImageIO.framework */,
+				EB232A7E2EB6F26F00C36EA5 /* IOKit.framework */,
+				EB232A812EB6F26F00C36EA5 /* Metal.framework */,
+				EB232A842EB6F26F00C36EA5 /* MobileCoreServices.framework */,
+				EB232A862EB6F26F00C36EA5 /* OpenGL.framework */,
+				EB232A7D2EB6F26F00C36EA5 /* OpenGLES.framework */,
+				EB232A802EB6F26F00C36EA5 /* QuartzCore.framework */,
+				EB232A8C2EB6F27000C36EA5 /* UIKit.framework */,
+				EB232A752EB6F26E00C36EA5 /* UniformTypeIdentifiers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EBC7C49A1CD512A500005ABE = {
+			isa = PBXGroup;
+			children = (
+				EBA377202B0C2793001427EA /* include */,
+				EBA377212B0C27B6001427EA /* source */,
+				EBC7C4A41CD512A500005ABE /* Products */,
+				EBB10C32293D679700F11D7F /* Frameworks */,
+				EB669EFC2EABB7F00018B866 /* sdl3.xcodeproj */,
+				EB669EFF2EABB7F00018B866 /* sdl3atk.xcodeproj */,
+				EB669F022EABB7F00018B866 /* sdl3image.xcodeproj */,
+				EB669F052EABB7F00018B866 /* sdl3ttf.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		EBC7C4A41CD512A500005ABE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB7089351CD51810005B1025 /* libsdl3app.a */,
+				EB17A6BC2EB6EC72006BC19C /* SDL3.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EB17A6B72EB6EC72006BC19C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB232A592EB6F08600C36EA5 /* ATK_audio.h in Headers */,
+				EB232A5A2EB6F08600C36EA5 /* ATK_codec.h in Headers */,
+				EB232A5B2EB6F08600C36EA5 /* ATK_dsp.h in Headers */,
+				EB232A5C2EB6F08600C36EA5 /* ATK_error.h in Headers */,
+				EB232A5D2EB6F08600C36EA5 /* ATK_file.h in Headers */,
+				EB232A5E2EB6F08600C36EA5 /* ATK_math.h in Headers */,
+				EB232A5F2EB6F08600C36EA5 /* ATK_rand.h in Headers */,
+				EB232A0F2EB6F07E00C36EA5 /* SDL.h in Headers */,
+				EB232A0E2EB6F07700C36EA5 /* SDL_app.h in Headers */,
+				EB232A102EB6F07E00C36EA5 /* SDL_assert.h in Headers */,
+				EB232A112EB6F07E00C36EA5 /* SDL_asyncio.h in Headers */,
+				EB232A602EB6F08600C36EA5 /* SDL_atk.h in Headers */,
+				EB232A122EB6F07E00C36EA5 /* SDL_atomic.h in Headers */,
+				EB232A132EB6F07E00C36EA5 /* SDL_audio.h in Headers */,
+				EB232A142EB6F07E00C36EA5 /* SDL_begin_code.h in Headers */,
+				EB232A152EB6F07E00C36EA5 /* SDL_bits.h in Headers */,
+				EB232A162EB6F07E00C36EA5 /* SDL_blendmode.h in Headers */,
+				EB232A172EB6F07E00C36EA5 /* SDL_camera.h in Headers */,
+				EB232A182EB6F07E00C36EA5 /* SDL_clipboard.h in Headers */,
+				EB232A192EB6F07E00C36EA5 /* SDL_close_code.h in Headers */,
+				EB232A1A2EB6F07E00C36EA5 /* SDL_copying.h in Headers */,
+				EB232A1B2EB6F07E00C36EA5 /* SDL_cpuinfo.h in Headers */,
+				EB232A1C2EB6F07E00C36EA5 /* SDL_dialog.h in Headers */,
+				EB232A1D2EB6F07E00C36EA5 /* SDL_egl.h in Headers */,
+				EB232A1E2EB6F07E00C36EA5 /* SDL_endian.h in Headers */,
+				EB232A1F2EB6F07E00C36EA5 /* SDL_error.h in Headers */,
+				EB232A202EB6F07E00C36EA5 /* SDL_events.h in Headers */,
+				EB232A212EB6F07E00C36EA5 /* SDL_filesystem.h in Headers */,
+				EB232A222EB6F07E00C36EA5 /* SDL_gamepad.h in Headers */,
+				EB232A232EB6F07E00C36EA5 /* SDL_gpu.h in Headers */,
+				EB232A242EB6F07E00C36EA5 /* SDL_guid.h in Headers */,
+				EB232A252EB6F07E00C36EA5 /* SDL_haptic.h in Headers */,
+				EB232A262EB6F07E00C36EA5 /* SDL_hidapi.h in Headers */,
+				EB232A272EB6F07E00C36EA5 /* SDL_hints.h in Headers */,
+				EB232A612EB6F08C00C36EA5 /* SDL_image.h in Headers */,
+				EB232A282EB6F07E00C36EA5 /* SDL_init.h in Headers */,
+				EB232A292EB6F07E00C36EA5 /* SDL_intrin.h in Headers */,
+				EB232A2A2EB6F07E00C36EA5 /* SDL_iostream.h in Headers */,
+				EB232A2B2EB6F07E00C36EA5 /* SDL_joystick.h in Headers */,
+				EB232A2C2EB6F07E00C36EA5 /* SDL_keyboard.h in Headers */,
+				EB232A2D2EB6F07E00C36EA5 /* SDL_keycode.h in Headers */,
+				EB232A2E2EB6F07E00C36EA5 /* SDL_loadso.h in Headers */,
+				EB232A2F2EB6F07E00C36EA5 /* SDL_locale.h in Headers */,
+				EB232A302EB6F07E00C36EA5 /* SDL_log.h in Headers */,
+				EB232A312EB6F07E00C36EA5 /* SDL_main.h in Headers */,
+				EB232A322EB6F07E00C36EA5 /* SDL_main_impl.h in Headers */,
+				EB232A332EB6F07E00C36EA5 /* SDL_messagebox.h in Headers */,
+				EB232A342EB6F07E00C36EA5 /* SDL_metal.h in Headers */,
+				EB232A352EB6F07E00C36EA5 /* SDL_misc.h in Headers */,
+				EB232A362EB6F07E00C36EA5 /* SDL_mouse.h in Headers */,
+				EB232A372EB6F07E00C36EA5 /* SDL_mutex.h in Headers */,
+				EB232A382EB6F07E00C36EA5 /* SDL_oldnames.h in Headers */,
+				EB232A392EB6F07E00C36EA5 /* SDL_opengl.h in Headers */,
+				EB232A3A2EB6F07E00C36EA5 /* SDL_opengl_glext.h in Headers */,
+				EB232A3B2EB6F07E00C36EA5 /* SDL_opengles.h in Headers */,
+				EB232A3C2EB6F07E00C36EA5 /* SDL_opengles2.h in Headers */,
+				EB232A3D2EB6F07E00C36EA5 /* SDL_opengles2_gl2.h in Headers */,
+				EB232A3E2EB6F07E00C36EA5 /* SDL_opengles2_gl2ext.h in Headers */,
+				EB232A3F2EB6F07E00C36EA5 /* SDL_opengles2_gl2platform.h in Headers */,
+				EB232A402EB6F07E00C36EA5 /* SDL_opengles2_khrplatform.h in Headers */,
+				EB232A412EB6F07E00C36EA5 /* SDL_pen.h in Headers */,
+				EB232A422EB6F07E00C36EA5 /* SDL_pixels.h in Headers */,
+				EB232A432EB6F07E00C36EA5 /* SDL_platform.h in Headers */,
+				EB232A442EB6F07E00C36EA5 /* SDL_platform_defines.h in Headers */,
+				EB232A452EB6F07E00C36EA5 /* SDL_power.h in Headers */,
+				EB232A462EB6F07E00C36EA5 /* SDL_process.h in Headers */,
+				EB232A472EB6F07E00C36EA5 /* SDL_properties.h in Headers */,
+				EB232A482EB6F07E00C36EA5 /* SDL_rect.h in Headers */,
+				EB232A492EB6F07E00C36EA5 /* SDL_render.h in Headers */,
+				EB232A4A2EB6F07E00C36EA5 /* SDL_revision.h in Headers */,
+				EB232A4B2EB6F07E00C36EA5 /* SDL_scancode.h in Headers */,
+				EB232A4C2EB6F07E00C36EA5 /* SDL_sensor.h in Headers */,
+				EB232A4D2EB6F07E00C36EA5 /* SDL_stdinc.h in Headers */,
+				EB232A4E2EB6F07E00C36EA5 /* SDL_storage.h in Headers */,
+				EB232A4F2EB6F07E00C36EA5 /* SDL_surface.h in Headers */,
+				EB232A502EB6F07E00C36EA5 /* SDL_system.h in Headers */,
+				EB232A652EB6F0B200C36EA5 /* SDL_textengine.h in Headers */,
+				EB232A512EB6F07E00C36EA5 /* SDL_thread.h in Headers */,
+				EB232A522EB6F07E00C36EA5 /* SDL_time.h in Headers */,
+				EB232A532EB6F07E00C36EA5 /* SDL_timer.h in Headers */,
+				EB232A542EB6F07E00C36EA5 /* SDL_touch.h in Headers */,
+				EB232A552EB6F07E00C36EA5 /* SDL_tray.h in Headers */,
+				EB232A642EB6F0B200C36EA5 /* SDL_ttf.h in Headers */,
+				EB232A562EB6F07E00C36EA5 /* SDL_version.h in Headers */,
+				EB232A572EB6F07E00C36EA5 /* SDL_video.h in Headers */,
+				EB232A582EB6F07E00C36EA5 /* SDL_vulkan.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EB17A6BB2EB6EC72006BC19C /* SDL3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB17A6C12EB6EC73006BC19C /* Build configuration list for PBXNativeTarget "SDL3" */;
+			buildPhases = (
+				EB17A6B72EB6EC72006BC19C /* Headers */,
+				EB17A6B82EB6EC72006BC19C /* Sources */,
+				EB17A6B92EB6EC72006BC19C /* Frameworks */,
+				EB17A6BA2EB6EC72006BC19C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB232B4D2EB6F90800C36EA5 /* PBXTargetDependency */,
+				EB232B4F2EB6F90800C36EA5 /* PBXTargetDependency */,
+				EB232B512EB6F90800C36EA5 /* PBXTargetDependency */,
+				EB232B532EB6F90800C36EA5 /* PBXTargetDependency */,
+			);
+			name = SDL3;
+			packageProductDependencies = (
+			);
+			productName = SDL3;
+			productReference = EB17A6BC2EB6EC72006BC19C /* SDL3.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EB7089341CD51810005B1025 /* sdl3app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB70893B1CD51810005B1025 /* Build configuration list for PBXNativeTarget "sdl3app" */;
+			buildPhases = (
+				EB7089311CD51810005B1025 /* Sources */,
+				EB7089321CD51810005B1025 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB232B412EB6F8E000C36EA5 /* PBXTargetDependency */,
+				EB232B432EB6F8E000C36EA5 /* PBXTargetDependency */,
+				EB232B452EB6F8E000C36EA5 /* PBXTargetDependency */,
+				EB232B472EB6F8E000C36EA5 /* PBXTargetDependency */,
+			);
+			name = sdl3app;
+			productName = "SDL2-static";
+			productReference = EB7089351CD51810005B1025 /* libsdl3app.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBC7C49B1CD512A500005ABE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1620;
+				ORGANIZATIONNAME = "Simple DirectMedia Layer";
+				TargetAttributes = {
+					EB17A6BB2EB6EC72006BC19C = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					EB7089341CD51810005B1025 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = EBC7C49E1CD512A500005ABE /* Build configuration list for PBXProject "sdl3app" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBC7C49A1CD512A500005ABE;
+			productRefGroup = EBC7C4A41CD512A500005ABE /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EB232ADB2EB6F73400C36EA5 /* Products */;
+					ProjectRef = EB669EFC2EABB7F00018B866 /* sdl3.xcodeproj */;
+				},
+				{
+					ProductGroup = EB232ADF2EB6F73400C36EA5 /* Products */;
+					ProjectRef = EB669EFF2EABB7F00018B866 /* sdl3atk.xcodeproj */;
+				},
+				{
+					ProductGroup = EB232AE12EB6F73400C36EA5 /* Products */;
+					ProjectRef = EB669F022EABB7F00018B866 /* sdl3image.xcodeproj */;
+				},
+				{
+					ProductGroup = EB232ADD2EB6F73400C36EA5 /* Products */;
+					ProjectRef = EB669F052EABB7F00018B866 /* sdl3ttf.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				EB7089341CD51810005B1025 /* sdl3app */,
+				EB17A6BB2EB6EC72006BC19C /* SDL3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EB232AE62EB6F73400C36EA5 /* libsdl3.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libsdl3.a;
+			remoteRef = EB232AE52EB6F73400C36EA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB232AE82EB6F73400C36EA5 /* libsdl3test.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libsdl3test.a;
+			remoteRef = EB232AE72EB6F73400C36EA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB232AF12EB6F73400C36EA5 /* libsdl3atk.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libsdl3atk.a;
+			remoteRef = EB232AF02EB6F73400C36EA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB232AF32EB6F73400C36EA5 /* libkissfft.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libkissfft.a;
+			remoteRef = EB232AF22EB6F73400C36EA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB232AF52EB6F73400C36EA5 /* libogg.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libogg.a;
+			remoteRef = EB232AF42EB6F73400C36EA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB232AF72EB6F73400C36EA5 /* libFLAC.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFLAC.a;
+			remoteRef = EB232AF62EB6F73400C36EA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB232AF92EB6F73400C36EA5 /* libvorbis.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libvorbis.a;
+			remoteRef = EB232AF82EB6F73400C36EA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB232AFB2EB6F73400C36EA5 /* libvorbisenc.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libvorbisenc.a;
+			remoteRef = EB232AFA2EB6F73400C36EA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB232AFD2EB6F73400C36EA5 /* libvorbisfile.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libvorbisfile.a;
+			remoteRef = EB232AFC2EB6F73400C36EA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB232B002EB6F73400C36EA5 /* libsdl3image.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libsdl3image.a;
+			remoteRef = EB232AFF2EB6F73400C36EA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB232B032EB6F73400C36EA5 /* libsdl3ttf.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libsdl3ttf.a;
+			remoteRef = EB232B022EB6F73400C36EA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB17A6BA2EB6EC72006BC19C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB17A6B82EB6EC72006BC19C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB232A682EB6F19100C36EA5 /* APP_device.c in Sources */,
+				EB232A662EB6F19100C36EA5 /* APP_sysdevice.m in Sources */,
+				EB232A672EB6F19100C36EA5 /* APP_sysdevice.m in Sources */,
+				EB232A692EB6F19100C36EA5 /* APP_display.c in Sources */,
+				EB232A6A2EB6F19100C36EA5 /* APP_sysdisplay.m in Sources */,
+				EB232A6C2EB6F19100C36EA5 /* APP_sysdisplay.m in Sources */,
+				EB232A6E2EB6F19100C36EA5 /* APP_version.c in Sources */,
+				EB232A6B2EB6F19100C36EA5 /* APP_sysinternals.m in Sources */,
+				EB232A6D2EB6F19100C36EA5 /* APP_sysinternals.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB7089311CD51810005B1025 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB5150D32C322B1C00DA7B09 /* APP_device.c in Sources */,
+				EB5150D62C32F1C900DA7B09 /* APP_sysdevice.m in Sources */,
+				EB669F352EABBC910018B866 /* APP_sysdevice.m in Sources */,
+				EBA377522B0C2A4C001427EA /* APP_display.c in Sources */,
+				EBA377592B0C30B8001427EA /* APP_sysdisplay.m in Sources */,
+				EB669F362EABBC910018B866 /* APP_sysdisplay.m in Sources */,
+				EBA377512B0C2A4C001427EA /* APP_version.c in Sources */,
+				EB17A6B52EB6E9B0006BC19C /* APP_sysinternals.m in Sources */,
+				EB17A6A82EB6E42B006BC19C /* APP_sysinternals.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB232B412EB6F8E000C36EA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sdl3;
+			targetProxy = EB232B402EB6F8E000C36EA5 /* PBXContainerItemProxy */;
+		};
+		EB232B432EB6F8E000C36EA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sdl3atk;
+			targetProxy = EB232B422EB6F8E000C36EA5 /* PBXContainerItemProxy */;
+		};
+		EB232B452EB6F8E000C36EA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sdl3image;
+			targetProxy = EB232B442EB6F8E000C36EA5 /* PBXContainerItemProxy */;
+		};
+		EB232B472EB6F8E000C36EA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sdl3ttf;
+			targetProxy = EB232B462EB6F8E000C36EA5 /* PBXContainerItemProxy */;
+		};
+		EB232B4D2EB6F90800C36EA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sdl3;
+			targetProxy = EB232B4C2EB6F90800C36EA5 /* PBXContainerItemProxy */;
+		};
+		EB232B4F2EB6F90800C36EA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sdl3atk;
+			targetProxy = EB232B4E2EB6F90800C36EA5 /* PBXContainerItemProxy */;
+		};
+		EB232B512EB6F90800C36EA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sdl3image;
+			targetProxy = EB232B502EB6F90800C36EA5 /* PBXContainerItemProxy */;
+		};
+		EB232B532EB6F90800C36EA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sdl3ttf;
+			targetProxy = EB232B522EB6F90800C36EA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EB17A6C22EB6EC73006BC19C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_WARN_BOOL_CONVERSION = NO;
+				CLANG_WARN_COMMA = NO;
+				CLANG_WARN_CONSTANT_CONVERSION = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_EMPTY_BODY = NO;
+				CLANG_WARN_ENUM_CONVERSION = NO;
+				CLANG_WARN_INFINITE_RECURSION = NO;
+				CLANG_WARN_INT_CONVERSION = "$(CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION)";
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = "$(CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION)";
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = "$(CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION)";
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = NO;
+				CODE_SIGN_STYLE = Manual;
+				CONFIG_FRAMEWORK_LDFLAGS = "";
+				CONFIG_PREPROCESSOR_DEFINITIONS = "";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 3.2.0;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 3.2.0;
+				DYLIB_CURRENT_VERSION = 3.2.0;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = "$(CLANG_MODULES_ENABLE_VERIFIER_TOOL)";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(CONFIG_PREPROCESSOR_DEFINITIONS)";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDL_INCLUDES)",
+					"$(SDL_APP_INCLUDES)",
+					"$(SDL_SOURCE)",
+					"${SDL_SOURCE}/video/khronos",
+					"$(SDL_INCLUDES)/build_config",
+				);
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Simple DirectMedia Layer. All rights reserved.";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.2.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-liconv",
+					"-lc++",
+					"-Wl,-force_load,$(BUILT_PRODUCTS_DIR)/libsdl3.a",
+					"-Wl,-force_load,$(BUILT_PRODUCTS_DIR)/libsdl3atk.a",
+					"-Wl,-force_load,$(BUILT_PRODUCTS_DIR)/libsdl3image.a",
+					"-Wl,-force_load,$(BUILT_PRODUCTS_DIR)/libsdl3ttf.a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.libsdl.SDL3-app";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = auto;
+				SKIP_INSTALL = NO;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,6,7";
+				VALIDATE_PRODUCT = NO;
+				VERSIONING_SYSTEM = "";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EB17A6C32EB6EC73006BC19C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_WARN_BOOL_CONVERSION = NO;
+				CLANG_WARN_COMMA = NO;
+				CLANG_WARN_CONSTANT_CONVERSION = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_EMPTY_BODY = NO;
+				CLANG_WARN_ENUM_CONVERSION = NO;
+				CLANG_WARN_INFINITE_RECURSION = NO;
+				CLANG_WARN_INT_CONVERSION = "$(CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION)";
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = "$(CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION)";
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = "$(CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION)";
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = NO;
+				CODE_SIGN_STYLE = Manual;
+				CONFIG_FRAMEWORK_LDFLAGS = "";
+				CONFIG_PREPROCESSOR_DEFINITIONS = "";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 3.2.0;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 3.2.0;
+				DYLIB_CURRENT_VERSION = 3.2.0;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = "$(CLANG_MODULES_ENABLE_VERIFIER_TOOL)";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(CONFIG_PREPROCESSOR_DEFINITIONS)",
+					NDEBUG,
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDL_INCLUDES)",
+					"$(SDL_APP_INCLUDES)",
+					"$(SDL_SOURCE)",
+					"${SDL_SOURCE}/video/khronos",
+					"$(SDL_INCLUDES)/build_config",
+				);
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Simple DirectMedia Layer. All rights reserved.";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.2.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-liconv",
+					"-lc++",
+					"-Wl,-force_load,$(BUILT_PRODUCTS_DIR)/libsdl3.a",
+					"-Wl,-force_load,$(BUILT_PRODUCTS_DIR)/libsdl3atk.a",
+					"-Wl,-force_load,$(BUILT_PRODUCTS_DIR)/libsdl3image.a",
+					"-Wl,-force_load,$(BUILT_PRODUCTS_DIR)/libsdl3ttf.a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.libsdl.SDL3-app";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = auto;
+				SKIP_INSTALL = NO;
+				STRIP_STYLE = "non-global";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,6,7";
+				VALIDATE_PRODUCT = NO;
+				VERSIONING_SYSTEM = "";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EB70893C1CD51810005B1025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_LINK_OBJC_RUNTIME = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SDL_INCLUDES)",
+					"$(SDL_APP_INCLUDES)",
+					"$(SDL_SOURCE)",
+					"${SDL_SOURCE}/video/khronos",
+					"$(SDL_INCLUDES)/build_config",
+				);
+				INSTALL_PATH = "@rpath";
+				OTHER_CFLAGS = "-Wno-objc-property-no-attribute";
+				PRODUCT_BUNDLE_IDENTIFIER = org.libsdl.SDL_app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB70893D1CD51810005B1025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_LINK_OBJC_RUNTIME = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SDL_INCLUDES)",
+					"$(SDL_APP_INCLUDES)",
+					"$(SDL_SOURCE)",
+					"${SDL_SOURCE}/video/khronos",
+					"$(SDL_INCLUDES)/build_config",
+				);
+				INSTALL_PATH = "@rpath";
+				OTHER_CFLAGS = "-Wno-objc-property-no-attribute";
+				PRODUCT_BUNDLE_IDENTIFIER = org.libsdl.SDL_app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EBC7C4AA1CD512A500005ABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CLANG_X86_VECTOR_INSTRUCTIONS = default;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 3.2.0;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_COMPATIBILITY_VERSION = 2.1.0;
+				DYLIB_CURRENT_VERSION = 2.1.0;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_ALTIVEC_EXTENSIONS = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "@rpath";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = "";
+				SDL_APP_INCLUDES = "$(SRCROOT)/../../include";
+				SDL_INCLUDES = "$(SRCROOT)/../../include";
+				SDL_SOURCE = "$(SRCROOT)/../../src";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
+				TVOS_DEPLOYMENT_TARGET = 15.6;
+				VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS = "OpenGL OpenGLES";
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
+				XROS_DEPLOYMENT_TARGET = 1.3;
+			};
+			name = Debug;
+		};
+		EBC7C4AB1CD512A500005ABE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CLANG_X86_VECTOR_INSTRUCTIONS = default;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 3.2.0;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 2.1.0;
+				DYLIB_CURRENT_VERSION = 2.1.0;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_ALTIVEC_EXTENSIONS = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "@rpath";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = "";
+				SDL_APP_INCLUDES = "$(SRCROOT)/../../include";
+				SDL_INCLUDES = "$(SRCROOT)/../../include";
+				SDL_SOURCE = "$(SRCROOT)/../../src";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
+				TVOS_DEPLOYMENT_TARGET = 15.6;
+				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS = "OpenGL OpenGLES";
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
+				XROS_DEPLOYMENT_TARGET = 1.3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB17A6C12EB6EC73006BC19C /* Build configuration list for PBXNativeTarget "SDL3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB17A6C22EB6EC73006BC19C /* Debug */,
+				EB17A6C32EB6EC73006BC19C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB70893B1CD51810005B1025 /* Build configuration list for PBXNativeTarget "sdl3app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB70893C1CD51810005B1025 /* Debug */,
+				EB70893D1CD51810005B1025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBC7C49E1CD512A500005ABE /* Build configuration list for PBXProject "sdl3app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBC7C4AA1CD512A500005ABE /* Debug */,
+				EBC7C4AB1CD512A500005ABE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBC7C49B1CD512A500005ABE /* Project object */;
+}
