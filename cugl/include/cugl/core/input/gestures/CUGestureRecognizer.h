@@ -52,7 +52,7 @@
 //
 //      3. This notice may not be removed or altered from any source distribution.
 //
-//  Authors: Chinmay Gangurde and Walker White
+//  Authors: Chinmay Gangurde, Alexander Jankowich, and Walker White
 //  Version: 7/3/24 (CUGL 3.0 reorganization)
 //
 #ifndef __CU_GESTURE_RECOGNIZER_H__
@@ -190,7 +190,29 @@ public:
     float getProtractorSimilarity(const UnistrokeGesture& other) const;
 
 };
+class MultistrokeGesture {
+    private:
+        /** Identifier string for a gesture **/
+        std::string _name;
+        /** Number of individual strokes making up gesture */
+        int _size;
+        /** Unistrokes forming this gesture */
+        std::vector<UnistrokeGesture> _unistrokes;
+    private:
+        /**
+         * Creates a gesture with given name and strokes
+         * 
+         * @param name the name for this gesture
+         * @param strokes number of generated unistroke permutations
+         * @param stroke_count the number of strokes in the original multistroke gesture
+         */
+        MultistrokeGesture(const std::string name, int stroke_count, const std::vector<UnistrokeGesture>& strokes){
+            _name = name;
+            _unistrokes = strokes;
+            _size = stroke_count;
+        };
 
+};
 #pragma mark -
 /**
  * A class representing the gesture recognition engine.
@@ -250,7 +272,7 @@ public:
     
 private:
     /** The collection of template gestures for matching */
-    std::unordered_map<std::string,UnistrokeGesture> _templates;
+    std::unordered_map<std::string,std::vector<UnistrokeGesture>> _templates;
     
     /** The recognition algorithm used by the engine */
     Algorithm _algorithm;
@@ -842,6 +864,74 @@ public:
     void addGestures(const std::shared_ptr<JsonValue>& json, bool unique=false);
     
     /**
+    * Adds a multistroke gesture to the recognizer.
+    *
+    * The gesture is defined as a sequence of strokes. Each stroke is a
+    * sequence of 2D points in drawing order.
+    *
+    * Internally, this method:
+    *   - Generates all permutations of stroke order
+    *   - Generates all forward/reversed stroke combinations
+    *   - Combines each permutation into a unistroke
+    *   - Normalizes each unistroke
+    *   - Stores them as templates for recognition
+    *
+    * @param name the identifier string for this gesture
+    * @param strokes the strokes composing the gesture
+    * 
+    * @return true if the gesture was added to this recognizer
+    */
+    bool addMultiStrokeGesture(const std::string name, 
+        const std::vector<std::vector<Vec2>> strokes);
+
+    /**
+    * Adds a multistroke gesture to the recognizer.
+    *
+    * The gesture is defined as a sequence of strokes. Each stroke is a
+    * sequence of 2D points in drawing order.
+    *
+    * Internally, this method:
+    *   - Generates all permutations of stroke order
+    *   - Generates all forward/reversed stroke combinations
+    *   - Combines each permutation into a unistroke
+    *   - Normalizes each unistroke
+    *   - Stores them as templates for recognition
+    *
+    * @param name the identifier string for this gesture
+    * @param strokes the strokes composing the gesture
+    * @param length the lengths of the Path2 array
+    * 
+    * @return true if the gesture was added to this recognizer
+    */
+    bool addMultiStrokeGesture(const std::string name, const Path2* strokes,
+    int length);
+
+    /**
+    * Adds a multistroke gesture to the recognizer.
+    *
+    * The gesture is defined as a sequence of strokes. Each stroke is a
+    * sequence of 2D points in drawing order.
+    *
+    * Internally, this method:
+    *   - Generates all permutations of stroke order
+    *   - Generates all forward/reversed stroke combinations
+    *   - Combines each permutation into a unistroke
+    *   - Normalizes each unistroke
+    *   - Stores them as templates for recognition
+    *
+    * @param name the identifier string for this gesture
+    * @param strokes the strokes composing the gesture
+    * @param stroke_sizes the size of each strokes
+    * @param num_strokes the number of strokes 
+    * 
+    * @return true if the gesture was added to this recognizer
+    */
+    bool addMultiStrokeGesture(const std::string name, const Vec2** strokes,
+    int* stroke_sizes, int num_strokes);
+
+
+
+    /**
      * Removes the gesture with the given name from the recongizer
      *
      * @param name  The name of the gesture to remove
@@ -867,20 +957,26 @@ public:
     }
     
     /**
-     * Returns (a copy of) gesture of the given name
+     * Returns (a copy of) all gestures of the given name
      *
-     * If there is no gesture of that name, it will return an empty gesture.
+     * If there is no gesture of that name, it will return an vector.
      *
      * @param name      the name of the gesture to query
      *
      * @return (a copy of) gesture of the given name
      */
-    const UnistrokeGesture getGesture(const std::string name) const {
+    const std::vector<UnistrokeGesture> getGesture(const std::string name) const {
+        std::vector<UnistrokeGesture> result;
         auto it = _templates.find(name);
         if (it == _templates.end()) {
-            return UnistrokeGesture();
+            return result;
         }
-        return it->second;
+        
+        for (auto& gesture : it -> second){
+            result.push_back(gesture);
+        }
+        
+        return result;
     }
     
     /**
@@ -892,6 +988,7 @@ public:
     
     /**
      * Returns all the (normalized) gestures stored in this recognizer
+     * Some gestures may correspond to the same name
      *
      * @return all the (normalized) gestures stored in this recognizer
      */

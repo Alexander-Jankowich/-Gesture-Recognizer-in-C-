@@ -22,6 +22,14 @@
 //  pp. 2169 - 2172.
 //  https ://dl.acm.org/citation.cfm?id=1753654/
 //
+//
+//  $N Recognizer
+//  Anthony, L. and Wobbrock, J.O. (2010). A lightweight multistroke
+//  recognizer for user interface prototypes. Proceedings of Graphics
+//  Interface (GI '10). Ottawa, Ontario (May 31-June 2, 2010). Toronto,
+//  Ontario: Canadian Information Processing Society, pp. 245-252.
+//  https ://dl.acm.org/citation.cfm?id=1839258
+//
 //  This class uses our standard shared-pointer architecture.
 //
 //  1. The constructor does not perform any initialization; it just sets all
@@ -52,13 +60,14 @@
 //
 //      3. This notice may not be removed or altered from any source distribution.
 //
-//  Authors: Chinmay Gangurde and Walker White
-//  Version: 7/3/24 (CUGL 3.0 reorganization)
+//  Authors: Chinmay Gangurde, Alexander Jankowich, and Walker White
+//  Version: 3/1/26 (CUGL 3.0 reorganization)
 //
 #include <cugl/core/assets/CUJsonValue.h>
 #include <cugl/core/util/CUDebug.h>
 #include <cugl/core/input/gestures/CUGestureRecognizer.h>
 #include <limits>
+
 
 using namespace cugl;
 
@@ -113,6 +122,142 @@ static Vec2 path_centroid(const std::vector<cugl::Vec2>& points) {
 }
 
 /**
+ * Calculates permutations of orders
+ * 
+ * @param n      the size of orders
+ * @param order     vector of integer indices
+ * @param orders    vector of vectors of integer indices 
+ */
+static void heap_permute(int n, std::vector<int> &order, 
+    std::vector<std::vector<int>> &orders){
+    if (n == 1){
+        std::vector<int> slice(order.begin(), order.end());
+        orders.push_back(slice);
+        return;
+    } else{
+        for (int i = 0; i < n; i ++){
+            heap_permute(n - 1, order, orders);
+            if(n % 2 == 1){
+                int tmp = order[0];
+                order[0] = order[n - 1];
+                order[n - 1] = tmp;
+            }else{
+                int tmp = order[i];
+                order[i] = order[n - 1];
+                order[n - 1] = tmp;
+            }
+        }
+    }
+}
+
+/**
+ * Generates all possible single-path versions of a multistroke
+ * gesture by reordering and reversing strokes
+ * 
+ * @param strokes vector of vectors of points
+ * @param orders vector of vectors of indices 
+ * 
+ * @return vecor of vectors of points representing all possible single-path of multistroke
+ */
+static std::vector<std::vector<cugl::Vec2>> make_unistrokes(
+                    const std::vector<std::vector<cugl::Vec2>>& strokes,
+                    const std::vector<std::vector<int>>& orders){
+    std::vector<std::vector<cugl::Vec2>> unistrokes;
+    for (int r = 0; r < orders.size(); r++) {
+        int num = 1 << orders[r].size();
+        for (int b = 0; b < num; b++) {
+            std::vector<cugl::Vec2> unistroke;
+            for (int i = 0; i < orders[r].size(); i++) {
+                std::vector<cugl::Vec2> points;
+                if ((b >> i) & 1) {
+                    points = std::vector<cugl::Vec2>(
+                        strokes[orders[r][i]].rbegin(),
+                        strokes[orders[r][i]].rend()
+                    );
+                } else {
+                    points = std::vector<cugl::Vec2>(
+                        strokes[orders[r][i]].begin(),
+                        strokes[orders[r][i]].end()
+                    );
+                }
+                unistroke.insert(unistroke.end(),
+                                 points.begin(),
+                                 points.end());
+            }
+            unistrokes.push_back(unistroke);
+        }
+    }
+
+    return unistrokes;
+}
+
+/**
+ * Converts multiple strokes into a single point sequence
+ * 
+ * @param strokes vector of vectors of points (strokes)
+ * 
+ * @return strokes points concatenated into a unistroke
+ * 
+ */
+static std::vector<cugl::Vec2> combine_strokes(
+    std::vector<std::vector<cugl::Vec2>> strokes){
+    std::vector<cugl::Vec2> points;
+    for (int s = 0; s < strokes.size(); s++){
+        for (int p = 0; p < strokes[s].size(); p++){
+            points.push_back(strokes[s][p]);
+        }
+    }
+    return points;
+}
+
+/**
+ * Converts an array of Vec2 arrays into a vector of
+ * Vec2 vectors
+ * 
+ * @param strokes array of Vec2 arrays
+ * @param num_strokes number of strokes 
+ * @param stroke_lengths the length of each stroke
+ * 
+ */
+std::vector<std::vector<cugl::Vec2>> convertArray(
+    const cugl::Vec2** strokes,
+    int num_strokes,
+    int* stroke_lengths
+) {
+    std::vector<std::vector<cugl::Vec2>> result;
+    for (int i = 0; i < num_strokes; i++) {
+        std::vector<cugl::Vec2> stroke;
+
+        for (int j = 0; j < stroke_lengths[i]; j++) {
+            stroke.push_back(strokes[i][j]);
+        }
+        result.push_back(stroke);
+    }
+    return result;
+}
+
+/**
+ * Converts a Path2 array into a vector of Vec2 vectors
+ * 
+ * @param strokes Path2 array
+ * @param length The length of the Path2 array
+ * 
+ */
+std::vector<std::vector<cugl::Vec2>> convertPath(
+    const Path2* strokes,
+    int length
+) {
+    std::vector<std::vector<cugl::Vec2>> result;
+    for (int i = 0; i < length; i++){
+        std::vector<cugl::Vec2>stroke = strokes[i].vertices;
+        result.push_back(stroke);
+    }
+    return result;
+}
+
+
+
+/**
  * Returns the centroid of the gesture.
  *
  * @param points    an array of points representing a gesture.
@@ -129,6 +274,8 @@ static Vec2 path_centroid(const Vec2* points, size_t psize) {
     result /= psize;
     return result;
 }
+
+
 
 /**
  * Returns the orientation of the gesture.
@@ -569,25 +716,28 @@ const std::string GestureRecognizer::match(const Vec2* points,  size_t psize,
 
     float bestdist = std::numeric_limits<float>::max();
     std::string bestmatch = "";
-    for(auto it = _templates.begin(); it != _templates.end(); ++it) {
-        float angle = Vec2::angle(it->second.getOrientation(), orientation);
-        if (_tolerance < 0 || (-_tolerance < angle && angle < _tolerance)) {
-            float distance = 0;
-            switch (_algorithm) {
-                case Algorithm::ONEDOLLAR:
-                    distance = distance_at_best_angle(normalized, it->second.getPoints(),
+    for(auto& pair : _templates) {
+        for(auto& existing : pair.second){
+            float angle = Vec2::angle(existing.getOrientation(), orientation);
+            if (_tolerance < 0 || (-_tolerance < angle && angle < _tolerance)) {
+                float distance = 0;
+                switch (_algorithm) {
+                    case Algorithm::ONEDOLLAR:
+                        distance = distance_at_best_angle(normalized, existing.getPoints(),
                                                       -M_PI_4,M_PI_4,DEG2RAD(2.0));
-                    break;
-                case Algorithm::PROTRACTOR:
-                    distance = optimal_cosine_distance(it->second.getVector(),vectorized);
-                    break;
-            }
+                        break;
+                    case Algorithm::PROTRACTOR:
+                        distance = optimal_cosine_distance(existing.getVector(),vectorized);
+                        break;
+                }
             
             if (distance < bestdist) {
                 bestdist  = distance;
-                bestmatch = it->first;
+                bestmatch = pair.first;
+            }
             }
         }
+        
     }
     
     if (_algorithm == Algorithm::ONEDOLLAR) {
@@ -598,8 +748,10 @@ const std::string GestureRecognizer::match(const Vec2* points,  size_t psize,
     }
     
     if (similarity < _accuracy) {
+        CULog("similarity was less than accuracy");
         return "";
     }
+    CULog("this is best match");
     return bestmatch;
 }
 
@@ -622,38 +774,65 @@ const std::string GestureRecognizer::match(const Vec2* points,  size_t psize,
  *
  * @return the similarity measure of the named gesture to this one.
  */
-float GestureRecognizer::similarity(const std::string name, const Vec2* points,
-                                    size_t psize, bool invariant) {
+float GestureRecognizer::similarity(const std::string name,
+                                    const Vec2* points,
+                                    size_t psize,
+                                    bool invariant) {
     CUAssertLog(psize > 1, "A gesture must have at least two points");
+
     auto it = _templates.find(name);
-    if (it == _templates.end()) {
+    if (it == _templates.end() || it->second.empty()) {
         return 0;
     }
-    
+    Vec2 orientation;
     if (!invariant && _tolerance >= 0) {
-        Vec2 orientation = path_orientation(points, psize, _normbounds);
-        float angle = Vec2::angle(it->second.getOrientation(), orientation);
-        if (-_tolerance >= angle || angle >= _tolerance){
-            return 0;
+        orientation = path_orientation(points, psize, _normbounds);
+    }
+    std::vector<Vec2> normalized;
+    std::vector<float> vectorized;
+    if (_algorithm == Algorithm::ONEDOLLAR) {
+        normalized = normalize(points, psize);
+    } else {
+        vectorized = vectorize(points, psize);
+    }
+    float bestScore = 0.0f;
+    for (auto& existing : it -> second) {
+        // Orientation filtering
+        if (!invariant && _tolerance >= 0) {
+            float angle = Vec2::angle(existing.getOrientation(), orientation);
+            if (angle <= -_tolerance || angle >= _tolerance) {
+                continue;
+            }
+        }
+        float distance;
+        float score;
+        switch (_algorithm) {
+            case Algorithm::ONEDOLLAR: {
+                distance = distance_at_best_angle(
+                    normalized,
+                    existing.getPoints(),
+                    -DEG2RAD(45),
+                    DEG2RAD(45),
+                    DEG2RAD(2.0)
+                );
+                float halfdiag = 0.5f * ((Vec2)_normbounds).length();
+                score = 1.0f - (distance / halfdiag);
+                break;
+            }
+            case Algorithm::PROTRACTOR:
+                distance = optimal_cosine_distance(
+                    existing.getVector(),
+                    vectorized
+                );
+                score = std::atan2(1.0f, distance) / M_PI_2;
+                break;
+        }
+        if (score > bestScore) {
+            bestScore = score;
         }
     }
-    
-    float halfdiag;
-    float distance;
-    float score;
-    switch (_algorithm) {
-        case Algorithm::ONEDOLLAR:
-            distance = distance_at_best_angle(normalize(points,psize), it->second.getPoints(),
-                                              -DEG2RAD(45), DEG2RAD(45), DEG2RAD(2.0));
-            halfdiag = 0.5f * ((Vec2)_normbounds).length();
-            score = 1.0 - (distance / halfdiag);
-            break;
-        case Algorithm::PROTRACTOR:
-            distance = optimal_cosine_distance(it->second.getVector(),vectorize(points,psize));
-            score = std::atan2(1.0,distance)/M_PI_2;
-            break;
-    }
-    return score;
+
+    return bestScore;
 }
 
 #pragma mark -
@@ -685,32 +864,124 @@ bool GestureRecognizer::addGesture(const std::string name, const Vec2* points,
 
     if (unique) {
         float halfdiag = 0.5f * ((Vec2)_normbounds).length();
-        for(auto it = _templates.begin(); it != _templates.end(); ++it) {
-            float distance;
-            float score;
-            switch (_algorithm) {
+        for(auto& pair : _templates) {
+            for(auto& existing : pair.second){
+                float distance;
+                float score;
+                switch (_algorithm) {
                 case Algorithm::ONEDOLLAR:
-                    distance = distance_at_best_angle(normalized, it->second.getPoints(),
+                    distance = distance_at_best_angle(normalized, existing.getPoints(),
                                                       -M_PI_4, M_PI_4, DEG2RAD(2.0));
                     score = 1.0 - (distance / halfdiag);
                     break;
                 case Algorithm::PROTRACTOR:
-                    distance = optimal_cosine_distance(it->second.getVector(),vectorized);
+                    distance = optimal_cosine_distance(existing.getVector(),vectorized);
                     score = std::atan2(1.0,distance)/M_PI_2;
                     break;
             }
             if (score > _accuracy) {
                 return false;
+                }
             }
         }
+            
+            
     }
     
     
     UnistrokeGesture gesture(name,orientation);
     gesture.setPoints(normalized);
     gesture.setVector(vectorized);
-    _templates[name] = gesture;
+    _templates[name].push_back(gesture);
     return true;
+}
+
+/**
+ * Adds a multistroke gesture to the recognizer.
+ *
+ * The gesture is defined as a sequence of strokes. Each stroke is a
+ * sequence of 2D points in drawing order.
+ *
+ * Internally, this method:
+ *   - Generates all permutations of stroke order
+ *   - Generates all forward/reversed stroke combinations
+ *   - Combines each permutation into a unistroke
+ *   - Normalizes each unistroke
+ *   - Stores them as templates for recognition
+ *
+ * @param name the identifier string for this gesture
+ * @param strokes the strokes composing the gesture
+ * 
+ * @return true if the gesture was added to this recognizer
+*/
+bool GestureRecognizer::addMultiStrokeGesture(const std::string name,
+const std::vector<std::vector<Vec2>> strokes){
+    int n = strokes.size();
+
+    std::vector<int> order(n);
+    for (int i = 0; i < n; i++) order[i] = i;
+
+    std::vector<std::vector<int>> orders;
+    heap_permute(n,order,orders);
+
+    auto unistrokes = make_unistrokes(strokes, orders);
+    for (auto& u : unistrokes){
+        addGesture(name, u, false);
+    }
+    return true;
+
+}
+
+/**
+ * Adds a multistroke gesture to the recognizer.
+ *
+ * The gesture is defined as a sequence of strokes. Each stroke is a
+ * sequence of 2D points in drawing order.
+ *
+ * Internally, this method:
+ *   - Generates all permutations of stroke order
+ *   - Generates all forward/reversed stroke combinations
+ *   - Combines each permutation into a unistroke
+ *   - Normalizes each unistroke
+ *   - Stores them as templates for recognition
+ *
+ * @param name the identifier string for this gesture
+ * @param strokes the strokes composing the gesture
+ * @param length the lengths of the Path2 array
+ * 
+ * @return true if the gesture was added to this recognizer
+*/
+bool GestureRecognizer::addMultiStrokeGesture(const std::string name,
+const Vec2** strokes, int* stroke_sizes, int num_strokes){
+    std::vector<std::vector<cugl::Vec2>> s = convertArray(strokes, num_strokes,
+    stroke_sizes);
+    return addMultiStrokeGesture(name, s);
+}
+
+/**
+ * Adds a multistroke gesture to the recognizer.
+ *
+ * The gesture is defined as a sequence of strokes. Each stroke is a
+ * sequence of 2D points in drawing order.
+ *
+ * Internally, this method:
+ *   - Generates all permutations of stroke order
+ *   - Generates all forward/reversed stroke combinations
+ *   - Combines each permutation into a unistroke
+ *   - Normalizes each unistroke
+ *   - Stores them as templates for recognition
+ *
+ * @param name the identifier string for this gesture
+ * @param strokes the strokes composing the gesture
+ * @param stroke_sizes the size of each strokes
+ * @param num_strokes the number of strokes 
+ * 
+ * @return true if the gesture was added to this recognizer
+ */
+bool GestureRecognizer::addMultiStrokeGesture(const std::string name,
+const Path2* strokes, int length){
+    std::vector<std::vector<cugl::Vec2>> s = convertPath(strokes, length);
+    return addMultiStrokeGesture(name,s);
 }
 
 /**
@@ -768,8 +1039,11 @@ std::vector<std::string> GestureRecognizer::getGestureNames() const {
  */
 std::vector<UnistrokeGesture> GestureRecognizer::getGestures() const {
     std::vector<UnistrokeGesture> result;
-    for(auto it = _templates.begin(); it != _templates.end(); ++it) {
-        result.push_back(it->second);
+    for(auto& pair : _templates) {
+        for(auto& gesture : pair.second){
+            result.push_back(gesture);       
+        }
+        
     }
     return result;
 }
