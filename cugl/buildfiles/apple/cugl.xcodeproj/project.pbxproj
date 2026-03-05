@@ -31,6 +31,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		E4B5AE8D2F592CF8002F01E5 /* CUPGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B5AE8C2F592CF8002F01E5 /* CUPGestureRecognizer.cpp */; };
 		EB1903902F188A1A003D11B2 /* CULightBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB19038E2F188A1A003D11B2 /* CULightBatch.cpp */; };
 		EB1903912F188A1A003D11B2 /* CULightMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB19038F2F188A1A003D11B2 /* CULightMap.cpp */; };
 		EB19F8352EF4A2FD003D11B2 /* CUHLOpaques.h in Headers */ = {isa = PBXBuildFile; fileRef = EB19F8242EF4A2FD003D11B2 /* CUHLOpaques.h */; };
@@ -598,6 +599,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E4B5AE8C2F592CF8002F01E5 /* CUPGestureRecognizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CUPGestureRecognizer.cpp; sourceTree = "<group>"; };
+		E4B5AE8F2F592D19002F01E5 /* CUPGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CUPGestureRecognizer.h; sourceTree = "<group>"; };
 		EB0703B026B4BFC1001838D6 /* CUTextAlignment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CUTextAlignment.h; sourceTree = "<group>"; };
 		EB07893B1D2D6E3E000BFDF7 /* CUSimpleExtruder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CUSimpleExtruder.cpp; sourceTree = "<group>"; };
 		EB0789521D3020E3000BFDF7 /* CUInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CUInput.cpp; sourceTree = "<group>"; };
@@ -1223,6 +1226,7 @@
 		EB163965295A22860090F7D4 /* gestures */ = {
 			isa = PBXGroup;
 			children = (
+				E4B5AE8F2F592D19002F01E5 /* CUPGestureRecognizer.h */,
 				EB16396B295A22A20090F7D4 /* cu_gesture.h */,
 				EB16396C295A22A20090F7D4 /* CUCoreGesture.h */,
 				EB163969295A22A20090F7D4 /* CUPanGesture.h */,
@@ -1254,6 +1258,7 @@
 		EB1639A4295A23D00090F7D4 /* gestures */ = {
 			isa = PBXGroup;
 			children = (
+				E4B5AE8C2F592CF8002F01E5 /* CUPGestureRecognizer.cpp */,
 				EB1639A7295A23E70090F7D4 /* CUCoreGesture.cpp */,
 				EB1639A8295A23E70090F7D4 /* CUPanGesture.cpp */,
 				EB1639A5295A23E70090F7D4 /* CUPinchGesture.cpp */,
@@ -2629,6 +2634,7 @@
 				EBAD57012C3B974800B77A34 /* CUPath2.cpp in Sources */,
 				EBAD56F72C3B974000B77A34 /* CUTextWriter.cpp in Sources */,
 				EBAD572A2C3B975000B77A34 /* CUComplexExtruder.cpp in Sources */,
+				E4B5AE8D2F592CF8002F01E5 /* CUPGestureRecognizer.cpp in Sources */,
 				EBAD570B2C3B974800B77A34 /* CUSpline2.cpp in Sources */,
 				EBAD57132C3B974800B77A34 /* CUOrthographicCamera.cpp in Sources */,
 				EBAD56C32C3B971F00B77A34 /* CUAnimateSprite.cpp in Sources */,

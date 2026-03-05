@@ -35,5 +35,6 @@
 #include "CUPinchGesture.h"
 #include "CUSpinGesture.h"
 #include "CUGestureRecognizer.h"
+#include "CUPGestureRecognizer.h"
 
 #endif /* __CU_GESTURE_PKG_H__ */

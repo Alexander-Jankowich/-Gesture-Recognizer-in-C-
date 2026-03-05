@@ -39,5 +39,6 @@
 #include "CUGamepad.h"
 
 #include "gestures/cu_gesture.h"
+#include "gestures/CUPGestureRecognizer.h"
 
 #endif /* __CU_INPUT_PKG_H__ */

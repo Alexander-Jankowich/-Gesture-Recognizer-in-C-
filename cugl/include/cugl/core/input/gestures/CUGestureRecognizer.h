@@ -22,6 +22,20 @@
 //  pp. 2169 - 2172.
 //  https ://dl.acm.org/citation.cfm?id=1753654/
 //
+//  $N Recognizer
+//  Anthony, L. and Wobbrock, J.O. (2010). A lightweight multistroke
+//  recognizer for user interface prototypes. Proceedings of Graphics
+//  Interface (GI '10). Ottawa, Ontario (May 31-June 2, 2010). Toronto,
+//  Ontario: Canadian Information Processing Society, pp. 245-252.
+//  https ://dl.acm.org/citation.cfm?id=1839258
+//
+// $P+ Recognizer 
+//     Vatavu, R.-D. (2017). Improving gesture recognition accuracy on
+//     touch screens for users with low vision. Proceedings of the ACM
+//     Conference on Human Factors in Computing Systems (CHI '17). Denver,
+//     Colorado (May 6-11, 2017). New York: ACM Press, pp. 4667-4679.
+//     https ://dl.acm.org/citation.cfm?id=3025941
+//
 //  This class uses our standard shared-pointer architecture.
 //
 //  1. The constructor does not perform any initialization; it just sets all
@@ -53,7 +67,7 @@
 //      3. This notice may not be removed or altered from any source distribution.
 //
 //  Authors: Chinmay Gangurde, Alexander Jankowich, and Walker White
-//  Version: 7/3/24 (CUGL 3.0 reorganization)
+//  Version: 3/3/26 ($N Integration)
 //
 #ifndef __CU_GESTURE_RECOGNIZER_H__
 #define __CU_GESTURE_RECOGNIZER_H__
@@ -190,29 +204,7 @@ public:
     float getProtractorSimilarity(const UnistrokeGesture& other) const;
 
 };
-class MultistrokeGesture {
-    private:
-        /** Identifier string for a gesture **/
-        std::string _name;
-        /** Number of individual strokes making up gesture */
-        int _size;
-        /** Unistrokes forming this gesture */
-        std::vector<UnistrokeGesture> _unistrokes;
-    private:
-        /**
-         * Creates a gesture with given name and strokes
-         * 
-         * @param name the name for this gesture
-         * @param strokes number of generated unistroke permutations
-         * @param stroke_count the number of strokes in the original multistroke gesture
-         */
-        MultistrokeGesture(const std::string name, int stroke_count, const std::vector<UnistrokeGesture>& strokes){
-            _name = name;
-            _unistrokes = strokes;
-            _size = stroke_count;
-        };
 
-};
 #pragma mark -
 /**
  * A class representing the gesture recognition engine.
@@ -228,7 +220,7 @@ class MultistrokeGesture {
  * to a box defined by {@link #getNormalizedBounds}.
  *
  * The recognition algorithm can use either the traditional $1 algorithm
- * algorithm or the PROTACTOR method, depending on what suits you and what
+ * algorithm and/or the PROTACTOR method, depending on what suits you and what
  * gives you the best results for your application. For more information on
  * these algorithms, see
  *
@@ -928,8 +920,6 @@ public:
     */
     bool addMultiStrokeGesture(const std::string name, const Vec2** strokes,
     int* stroke_sizes, int num_strokes);
-
-
 
     /**
      * Removes the gesture with the given name from the recongizer

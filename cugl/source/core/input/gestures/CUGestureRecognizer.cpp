@@ -22,13 +22,19 @@
 //  pp. 2169 - 2172.
 //  https ://dl.acm.org/citation.cfm?id=1753654/
 //
-//
 //  $N Recognizer
 //  Anthony, L. and Wobbrock, J.O. (2010). A lightweight multistroke
 //  recognizer for user interface prototypes. Proceedings of Graphics
 //  Interface (GI '10). Ottawa, Ontario (May 31-June 2, 2010). Toronto,
 //  Ontario: Canadian Information Processing Society, pp. 245-252.
 //  https ://dl.acm.org/citation.cfm?id=1839258
+//
+//  $P+ Recognizer 
+//  Vatavu, R.-D. (2017). Improving gesture recognition accuracy on
+//  touch screens for users with low vision. Proceedings of the ACM
+//  Conference on Human Factors in Computing Systems (CHI '17). Denver,
+//  Colorado (May 6-11, 2017). New York: ACM Press, pp. 4667-4679.
+//  https ://dl.acm.org/citation.cfm?id=3025941
 //
 //  This class uses our standard shared-pointer architecture.
 //
@@ -61,7 +67,7 @@
 //      3. This notice may not be removed or altered from any source distribution.
 //
 //  Authors: Chinmay Gangurde, Alexander Jankowich, and Walker White
-//  Version: 3/1/26 (CUGL 3.0 reorganization)
+//  Version: 3/3/26 ($N Integration)
 //
 #include <cugl/core/assets/CUJsonValue.h>
 #include <cugl/core/util/CUDebug.h>
@@ -83,180 +89,13 @@ const int GESTURE_RECOGNIZER_NORM_LENGTH = 64;
 /** The default grid size of the normalization space */
 const int GESTURE_RECOGNIZER_NORM_SIZE   = 250;
 
+
 /** Phi for Golden Mean calculation */
 const float GESTURE_RECOGNIZER_PHI = static_cast<float>(0.5 * (-1.0 + std::sqrt(5.0)));
 
+
 #pragma mark -
 #pragma mark Static Helpers
-/**
- * Returns the cumulative the magnitude of the gesture.
- *
- * @param points    an array of points representing a gesture.
- * @param psize     the number of points in the gesture.
- *
- * @return the cumulative the magnitude pf the gesture vector.
- */
-static float path_length(const Vec2* points, size_t psize) {
-    float d = 0.0;
-    for (size_t ii = 1; ii < psize; ii++) {
-        d += points[ii-1].distance(points[ii]);
-    }
-    return d;
-}
-
-/**
- * Returns the centroid of the gesture.
- *
- * @param points    a vector of points representing a gesture.
- *
- * @return the centroid of the gesture.
- */
-static Vec2 path_centroid(const std::vector<cugl::Vec2>& points) {
-    Vec2 result;
-    for(auto it = points.begin(); it != points.end(); ++it) {
-        result += *it;
-    }
-    
-    result /= points.size();
-    return result;
-}
-
-/**
- * Calculates permutations of orders
- * 
- * @param n      the size of orders
- * @param order     vector of integer indices
- * @param orders    vector of vectors of integer indices 
- */
-static void heap_permute(int n, std::vector<int> &order, 
-    std::vector<std::vector<int>> &orders){
-    if (n == 1){
-        std::vector<int> slice(order.begin(), order.end());
-        orders.push_back(slice);
-        return;
-    } else{
-        for (int i = 0; i < n; i ++){
-            heap_permute(n - 1, order, orders);
-            if(n % 2 == 1){
-                int tmp = order[0];
-                order[0] = order[n - 1];
-                order[n - 1] = tmp;
-            }else{
-                int tmp = order[i];
-                order[i] = order[n - 1];
-                order[n - 1] = tmp;
-            }
-        }
-    }
-}
-
-/**
- * Generates all possible single-path versions of a multistroke
- * gesture by reordering and reversing strokes
- * 
- * @param strokes vector of vectors of points
- * @param orders vector of vectors of indices 
- * 
- * @return vecor of vectors of points representing all possible single-path of multistroke
- */
-static std::vector<std::vector<cugl::Vec2>> make_unistrokes(
-                    const std::vector<std::vector<cugl::Vec2>>& strokes,
-                    const std::vector<std::vector<int>>& orders){
-    std::vector<std::vector<cugl::Vec2>> unistrokes;
-    for (int r = 0; r < orders.size(); r++) {
-        int num = 1 << orders[r].size();
-        for (int b = 0; b < num; b++) {
-            std::vector<cugl::Vec2> unistroke;
-            for (int i = 0; i < orders[r].size(); i++) {
-                std::vector<cugl::Vec2> points;
-                if ((b >> i) & 1) {
-                    points = std::vector<cugl::Vec2>(
-                        strokes[orders[r][i]].rbegin(),
-                        strokes[orders[r][i]].rend()
-                    );
-                } else {
-                    points = std::vector<cugl::Vec2>(
-                        strokes[orders[r][i]].begin(),
-                        strokes[orders[r][i]].end()
-                    );
-                }
-                unistroke.insert(unistroke.end(),
-                                 points.begin(),
-                                 points.end());
-            }
-            unistrokes.push_back(unistroke);
-        }
-    }
-
-    return unistrokes;
-}
-
-/**
- * Converts multiple strokes into a single point sequence
- * 
- * @param strokes vector of vectors of points (strokes)
- * 
- * @return strokes points concatenated into a unistroke
- * 
- */
-static std::vector<cugl::Vec2> combine_strokes(
-    std::vector<std::vector<cugl::Vec2>> strokes){
-    std::vector<cugl::Vec2> points;
-    for (int s = 0; s < strokes.size(); s++){
-        for (int p = 0; p < strokes[s].size(); p++){
-            points.push_back(strokes[s][p]);
-        }
-    }
-    return points;
-}
-
-/**
- * Converts an array of Vec2 arrays into a vector of
- * Vec2 vectors
- * 
- * @param strokes array of Vec2 arrays
- * @param num_strokes number of strokes 
- * @param stroke_lengths the length of each stroke
- * 
- */
-std::vector<std::vector<cugl::Vec2>> convertArray(
-    const cugl::Vec2** strokes,
-    int num_strokes,
-    int* stroke_lengths
-) {
-    std::vector<std::vector<cugl::Vec2>> result;
-    for (int i = 0; i < num_strokes; i++) {
-        std::vector<cugl::Vec2> stroke;
-
-        for (int j = 0; j < stroke_lengths[i]; j++) {
-            stroke.push_back(strokes[i][j]);
-        }
-        result.push_back(stroke);
-    }
-    return result;
-}
-
-/**
- * Converts a Path2 array into a vector of Vec2 vectors
- * 
- * @param strokes Path2 array
- * @param length The length of the Path2 array
- * 
- */
-std::vector<std::vector<cugl::Vec2>> convertPath(
-    const Path2* strokes,
-    int length
-) {
-    std::vector<std::vector<cugl::Vec2>> result;
-    for (int i = 0; i < length; i++){
-        std::vector<cugl::Vec2>stroke = strokes[i].vertices;
-        result.push_back(stroke);
-    }
-    return result;
-}
-
-
-
 /**
  * Returns the centroid of the gesture.
  *
@@ -272,6 +111,40 @@ static Vec2 path_centroid(const Vec2* points, size_t psize) {
     }
     
     result /= psize;
+    return result;
+}
+
+/**
+ * Returns the cumulative the magnitude of the gesture.
+ *
+ * @param points    an array of points representing a gesture.
+ * @param psize     the number of points in the gesture.
+ *
+ * @return the cumulative the magnitude pf the gesture vector.
+ */
+static float path_length(const Vec2* points, size_t psize) {
+    float d = 0.0;
+    for (size_t ii = 1; ii < psize; ii++) {
+        d += points[ii-1].distance(points[ii]);
+    }
+    return d;
+
+}
+
+/**
+ * Returns the centroid of the gesture.
+ *
+ * @param points  a vector of points representing a gesture.
+ *
+ * @return the centroid of the gesture.
+ */
+static Vec2 path_centroid(const std::vector<cugl::Vec2>& points) {
+    Vec2 result;
+    for(auto it = points.begin(); it != points.end(); ++it) {
+        result += *it;
+    }
+    
+    result /= points.size();
     return result;
 }
 
@@ -572,6 +445,147 @@ static float optimal_cosine_distance(const std::vector<float>& path1,
     cosine = cosine > 1 ? 1 : (cosine < -1 ? -1 : cosine);
     return std::acos(cosine);
 }
+#pragma mark -
+#pragma mark Static $N helpers
+
+
+
+
+
+/**
+ * Calculates permutations of orders
+ * 
+ * @param n      the size of orders
+ * @param order     vector of integer indices
+ * @param orders    vector of vectors of integer indices 
+ */
+static void heap_permute(int n, std::vector<int> &order, 
+    std::vector<std::vector<int>> &orders){
+    if (n == 1){
+        std::vector<int> slice(order.begin(), order.end());
+        orders.push_back(slice);
+        return;
+    } else{
+        for (int i = 0; i < n; i ++){
+            heap_permute(n - 1, order, orders);
+            if(n % 2 == 1){
+                int tmp = order[0];
+                order[0] = order[n - 1];
+                order[n - 1] = tmp;
+            }else{
+                int tmp = order[i];
+                order[i] = order[n - 1];
+                order[n - 1] = tmp;
+            }
+        }
+    }
+}
+
+/**
+ * Generates all possible single-path versions of a multistroke
+ * gesture by reordering and reversing strokes
+ * 
+ * @param strokes vector of vectors of points
+ * @param orders vector of vectors of indices 
+ * 
+ * @return vecor of vectors of points representing all possible single-path of multistroke
+ */
+static std::vector<std::vector<cugl::Vec2>> make_unistrokes(
+                    const std::vector<std::vector<cugl::Vec2>>& strokes,
+                    const std::vector<std::vector<int>>& orders){
+    std::vector<std::vector<cugl::Vec2>> unistrokes;
+    for (int r = 0; r < orders.size(); r++) {
+        int num = 1 << orders[r].size();
+        for (int b = 0; b < num; b++) {
+            std::vector<cugl::Vec2> unistroke;
+            for (int i = 0; i < orders[r].size(); i++) {
+                std::vector<cugl::Vec2> points;
+                if ((b >> i) & 1) {
+                    points = std::vector<cugl::Vec2>(
+                        strokes[orders[r][i]].rbegin(),
+                        strokes[orders[r][i]].rend()
+                    );
+                } else {
+                    points = std::vector<cugl::Vec2>(
+                        strokes[orders[r][i]].begin(),
+                        strokes[orders[r][i]].end()
+                    );
+                }
+                unistroke.insert(unistroke.end(),
+                                 points.begin(),
+                                 points.end());
+            }
+            unistrokes.push_back(unistroke);
+        }
+    }
+
+    return unistrokes;
+}
+
+/**
+ * Converts multiple strokes into a single point sequence
+ * 
+ * @param strokes vector of vectors of points (strokes)
+ * 
+ * @return strokes points concatenated into a unistroke
+ * 
+ */
+static std::vector<cugl::Vec2> combine_strokes(
+    std::vector<std::vector<cugl::Vec2>> strokes){
+    std::vector<cugl::Vec2> points;
+    for (int s = 0; s < strokes.size(); s++){
+        for (int p = 0; p < strokes[s].size(); p++){
+            points.push_back(strokes[s][p]);
+        }
+    }
+    return points;
+}
+
+/**
+ * Converts an array of Vec2 arrays into a vector of
+ * Vec2 vectors
+ * 
+ * @param strokes array of Vec2 arrays
+ * @param num_strokes number of strokes 
+ * @param stroke_lengths the length of each stroke
+ * 
+ */
+std::vector<std::vector<cugl::Vec2>> convertArray(
+    const cugl::Vec2** strokes,
+    int num_strokes,
+    int* stroke_lengths
+) {
+    std::vector<std::vector<cugl::Vec2>> result;
+    for (int i = 0; i < num_strokes; i++) {
+        std::vector<cugl::Vec2> stroke;
+
+        for (int j = 0; j < stroke_lengths[i]; j++) {
+            stroke.push_back(strokes[i][j]);
+        }
+        result.push_back(stroke);
+    }
+    return result;
+}
+
+/**
+ * Converts a Path2 array into a vector of Vec2 vectors
+ * 
+ * @param strokes Path2 array
+ * @param length The length of the Path2 array
+ * 
+ */
+std::vector<std::vector<cugl::Vec2>> convertPath(
+    const Path2* strokes,
+    int length
+) {
+    std::vector<std::vector<cugl::Vec2>> result;
+    for (int i = 0; i < length; i++){
+        std::vector<cugl::Vec2>stroke = strokes[i].vertices;
+        result.push_back(stroke);
+    }
+    return result;
+}
+
 
 #pragma mark -
 #pragma mark Constructors
@@ -857,11 +871,10 @@ float GestureRecognizer::similarity(const std::string name,
 bool GestureRecognizer::addGesture(const std::string name, const Vec2* points,
                                    size_t psize, bool unique) {
     CUAssertLog(psize > 1, "A gesture must have at least two points");
-
+    
     Vec2 orientation = path_orientation(points, psize, _normbounds);
     std::vector<cugl::Vec2> normalized = normalize(points,psize);
     std::vector<float> vectorized = vectorize(points,psize);
-
     if (unique) {
         float halfdiag = 0.5f * ((Vec2)_normbounds).length();
         for(auto& pair : _templates) {
@@ -887,8 +900,6 @@ bool GestureRecognizer::addGesture(const std::string name, const Vec2* points,
             
             
     }
-    
-    
     UnistrokeGesture gesture(name,orientation);
     gesture.setPoints(normalized);
     gesture.setVector(vectorized);
@@ -947,7 +958,8 @@ const std::vector<std::vector<Vec2>> strokes){
  *
  * @param name the identifier string for this gesture
  * @param strokes the strokes composing the gesture
- * @param length the lengths of the Path2 array
+ * @param stroke_sizes the size of each stroke
+ * @param num_strokes the number of strokes
  * 
  * @return true if the gesture was added to this recognizer
 */
@@ -1123,6 +1135,9 @@ std::vector<float> GestureRecognizer::vectorize(const Vec2* points, size_t psize
 
 #pragma mark -
 #pragma mark UnistrokeGesture
+
+
+
 /**
  * Returns the (normalized) angles between the two gestures
  *
