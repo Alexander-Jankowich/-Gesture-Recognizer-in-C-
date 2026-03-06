@@ -53,7 +53,7 @@
 //      3. This notice may not be removed or altered from any source distribution.
 //
 //  Authors: Alexander Jankowich
-//  Version: 3/4/26 ($P+ Integration)
+//  Version: 3/5/26 ($P+ Integration)
 
 #ifndef __CU_PGESTURE_RECOGNIZER_H__
 #define __CU_PGESTURE_RECOGNIZER_H__
@@ -159,22 +159,40 @@ private:
     const int NUM_POINTS = 32;
 
     std::unordered_map<std::string,std::vector<PointCloudGesture>> _templates;
-    float _accuracy = 0.5f;
-    float _tolerance = 45.0f;  // degrees
+    float _accuracy = 0.8f; 
     size_t _normlength = NUM_POINTS;
-    Vec2 _normcenter = Vec2(0.0f, 0.0f); // where to center normalized gestures
+    Vec2 _normcenter = Vec2(0.0f, 0.0f); 
+
 public:
     bool init();    
     static std::shared_ptr<PGestureRecognizer> alloc() {
     std::shared_ptr<PGestureRecognizer> result = std::make_shared<PGestureRecognizer>();
     return (result->init() ? result : nullptr);
     }   
+
+    /**
+    * Empties the recongizer of all gestures and resets all attributes.
+    *
+    * This will set the sample size to 0, meaning no future matches are
+    * possible. You must reinitialize the object to use it.
+    */
     void dispose() {
         _templates.clear();
-        _accuracy = 0.8f;
+        _accuracy = 0.0f;
         _normlength = NUM_POINTS;
         _normcenter = Vec2(0,0);
     }
+
+    /**
+     * Sets the accuracy score required to recognize a gesture
+     * 
+     * @param acc the desired accuracy score [0,1]
+     * 
+    */
+    void set_accuracy(float acc){
+        _accuracy = acc;
+    }
+
     #pragma mark Gesture Matching
     /**
      * Returns the name of the gesture with the closest match to the given one.

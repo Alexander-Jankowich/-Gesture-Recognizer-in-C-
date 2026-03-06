@@ -52,7 +52,7 @@
 //      3. This notice may not be removed or altered from any source distribution.
 //
 //  Authors: Alexander Jankowich
-//  Version: 3/4/26 ($P+ Integration)
+//  Version: 3/5/26 ($P+ Integration)
 
 
 #include <cugl/core/assets/CUJsonValue.h>
@@ -72,7 +72,7 @@ using namespace cugl;
  * 
  * @return float distance between points taking angle into account
  */
-static float distance_with_angle(PointCloudPoint p1, PointCloudPoint p2){
+static float distance_with_angle(const PointCloudPoint& p1, const PointCloudPoint& p2){
     float dx = p2.position.x - p1.position.x;
     float dy = p2.position.y - p1.position.y;
     float da = p2.angle - p1.angle;
@@ -88,7 +88,7 @@ static float distance_with_angle(PointCloudPoint p1, PointCloudPoint p2){
  * 
  * @return float distance between points 
  */
-static float distance(PointCloudPoint p1, PointCloudPoint p2){
+static float distance(const PointCloudPoint& p1, const PointCloudPoint& p2){
     float dx = p2.position.x - p1.position.x;
     float dy = p2.position.y - p1.position.y;
     return std::sqrt(dx * dx + dy * dy);
@@ -102,7 +102,7 @@ static float distance(PointCloudPoint p1, PointCloudPoint p2){
  * @return length traversed by point path
  * 
  */
-static float cloud_path_length(std::vector<PointCloudPoint> points){
+static float cloud_path_length(const std::vector<PointCloudPoint>& points){
     float d = 0.0;
     for(int i = 1; i < points.size(); i++){
         if (points[i].id == points[i - 1].id){
@@ -119,7 +119,7 @@ static float cloud_path_length(std::vector<PointCloudPoint> points){
  * 
  * @return centroid
  */
-static PointCloudPoint cloud_centroid(std::vector<PointCloudPoint> points){
+static PointCloudPoint cloud_centroid(const std::vector<PointCloudPoint>& points){
     float x = 0.0;
     float y = 0.0;
     for(int i = 0; i < points.size(); i++){
@@ -151,11 +151,69 @@ PointCloudPoint pt){
         float qy = points[i].position.y + pt.position.y - centroid.position.y;
         PointCloudPoint t_point;
         t_point.position = Vec2(qx,qy);
+        t_point.angle = points[i].angle;
         t_point.id = points[i].id;
         result.push_back(t_point);
     }
     return result;
 }
+/**
+ * Computes the indicative angle of a point cloud.
+ *
+ * The indicative angle is the angle formed between the centroid of the point cloud
+ * and the first point in the cloud. It is used to rotate the gesture to a canonical
+ * orientation, which is necessary for rotational invariance in the $P+ recognizer.
+ *
+ * @param pts  the vector of PointCloudPoint representing the gesture
+ *
+ * @return the angle in radians between the first point and the centroid
+ */
+static float indicative_angle(const std::vector<PointCloudPoint>& pts) {
+    PointCloudPoint c = cloud_centroid(pts);
+    return atan2(c.position.y - pts[0].position.y,
+                 c.position.x - pts[0].position.x);
+}
+
+/**
+ * Rotates a point cloud around its centroid by a specified angle.
+ *
+ * This function translates all points so that the centroid is at the origin,
+ * rotates each point by the given angle (in radians), and then translates
+ * the points back to the original centroid position.
+ *
+ * This is used to normalize the orientation of a gesture, making the
+ * $P+ recognizer rotationally invariant.
+ *
+ * @param pts    the vector of PointCloudPoint to rotate
+ * @param angle  the rotation angle in radians (positive = counterclockwise)
+ *
+ * @return a new vector of PointCloudPoint representing the rotated gesture
+ *
+ * Example:
+ *   float angle = indicative_angle(cloud);
+ *   cloud = cloud_rotate(cloud, -angle); // rotate gesture to canonical orientation
+ */
+static std::vector<PointCloudPoint> cloud_rotate(
+    const std::vector<PointCloudPoint>& pts, float angle)
+{
+    PointCloudPoint c = cloud_centroid(pts);
+    std::vector<PointCloudPoint> result;
+
+    for (auto& p : pts) {
+        float dx = p.position.x - c.position.x;
+        float dy = p.position.y - c.position.y;
+
+        float qx = dx * cos(angle) - dy * sin(angle) + c.position.x;
+        float qy = dx * sin(angle) + dy * cos(angle) + c.position.y;
+
+        PointCloudPoint np = p;
+        np.position = Vec2(qx,qy);
+        result.push_back(np);
+    }
+
+    return result;
+}
+
 /**
  * Computes normalized turning angles 
  * 
@@ -164,7 +222,7 @@ PointCloudPoint pt){
  * @return points with normalized turning angles
  */
 static std::vector<PointCloudPoint> compute_normalized_angles(
-    std::vector<PointCloudPoint> points){
+    const std::vector<PointCloudPoint>& points){
         std::vector<PointCloudPoint> new_points;
         new_points.push_back(points[0]);
         for (int i = 1; i < points.size() - 1; i++){
@@ -174,6 +232,7 @@ static std::vector<PointCloudPoint> compute_normalized_angles(
             (points[i].position.y - points[i - 1].position.y);
             float dn = distance(points[i + 1],points[i]) * 
             distance(points[i], points[i - 1]);
+            if (dn < 1e-6f) dn = 1e-6f;
             float cosangle = std::max(-1.0f, std::min(1.0f, (dx + dy) / dn));
             float angle = std::acos(cosangle) / M_PI;
             PointCloudPoint new_point;
@@ -189,6 +248,8 @@ static std::vector<PointCloudPoint> compute_normalized_angles(
         return new_points;
     }
 
+
+
 /** Resamples cloud points so they have exactly n even length points 
  * in path
  * 
@@ -196,15 +257,17 @@ static std::vector<PointCloudPoint> compute_normalized_angles(
  * @param n number of points to resample to
  * 
  * @return resampled points
- */
-
+*/
 static std::vector<PointCloudPoint> cloud_resample(std::vector<PointCloudPoint> points, int n) {
-
     float I = cloud_path_length(points) / (n - 1); 
+    float pathLen = cloud_path_length(points);
+    if (I < 1e-6f) return points;
     float D = 0.0f;
     std::vector<PointCloudPoint> result;
     result.push_back(points[0]);
     for (int i = 1; i < points.size(); i++) {
+        if ((int)result.size() >= n) break;
+
         if (points[i].id == points[i - 1].id) {
             float d = distance(points[i - 1], points[i]);
             if ((D + d) >= I) {
@@ -239,7 +302,15 @@ static std::vector<PointCloudPoint> cloud_resample(std::vector<PointCloudPoint> 
     return result;
 }
 
-static std::vector<PointCloudPoint> cloud_scale(std::vector<PointCloudPoint> points){
+/**
+ * Responsible for normalizing the gesture and removing the size difference 
+ * between all gestures.
+ * 
+ * @param points the point cloud to be normalized
+ * 
+ * @return the new normalized point cloud.
+ */
+static std::vector<PointCloudPoint> cloud_scale(const std::vector<PointCloudPoint>& points){
     float minX = INFINITY;
     float maxX = -INFINITY;
     float minY = INFINITY;
@@ -251,6 +322,7 @@ static std::vector<PointCloudPoint> cloud_scale(std::vector<PointCloudPoint> poi
         maxY = std::max(maxY, points[i].position.y);
     }
     float size = std::max(maxX - minX, maxY - minY);
+    if (size < 1e-6f) size = 1.0f;
     std::vector<PointCloudPoint> result;
     for (int i = 0; i < points.size(); i++){
         float qx = (points[i].position.x - minX) / size;
@@ -264,6 +336,17 @@ static std::vector<PointCloudPoint> cloud_scale(std::vector<PointCloudPoint> poi
 
  }
 
+/**
+ * Computes the cloud_distance used in $P+ algorithm
+ * uses euclidenan distance with angle to compute the 
+ * total distance between the points and match points with their
+ * closest partner.
+ * 
+ * @param pts1 the first point cloud
+ * @param pts2 the second point cloud
+ * 
+ * @return the distance between the two point clouds 
+ */
 static float cloud_distance(const std::vector<PointCloudPoint>& pts1, 
                             const std::vector<PointCloudPoint>& pts2)
 {
@@ -276,13 +359,7 @@ static float cloud_distance(const std::vector<PointCloudPoint>& pts1,
         int index = -1;
         float minDist = INFINITY;
         for (int j = 0; j < pts2.size(); j++) {     
-            float d = distance_with_angle(pts1[i], pts2[j]);
-            CULog("P1 angle: %f, P2 angle: %f, da: %f, d: %f", pts1[i].angle, pts2[j].angle, pts2[j].angle - pts1[i].angle, d);
-            if (std::isnan(d)) {
-                CULog("Distance is NaN! P1: (%f,%f,%f), P2: (%f,%f,%f)",
-                pts1[i].position.x, pts1[i].position.y, pts1[i].angle,
-                pts2[j].position.x, pts2[j].position.y, pts2[j].angle);
-             }
+            float d = distance_with_angle(pts1[i], pts2[j]);    
             if (d < minDist && !matched[j]) {     
                 minDist = d;
                 index = j;
@@ -306,7 +383,16 @@ static float cloud_distance(const std::vector<PointCloudPoint>& pts1,
     return sum;
 }
 
-static void convert_unistroke(const std::vector<Vec2> points,
+/**
+ * Adds a unistroke gesture to the point cloud. Note that
+ * an id must be provided to specify the stroke in the gesture
+ * that the points belongs to. 
+ * 
+ * @param points the stroke to be converted
+ * @param cloud the point cloud to be modified
+ * @param stroke_id the id of the stroke
+ */
+static void convert_unistroke(const std::vector<Vec2>& points,
     std::vector<PointCloudPoint>& cloud,int stroke_id){
     for(auto& p : points){
         PointCloudPoint pt;
@@ -317,6 +403,14 @@ static void convert_unistroke(const std::vector<Vec2> points,
     }
 }
 
+/**
+ * Converts a multi stroke gesture into a point cloud returning 
+ * the constructed point cloud
+ * 
+ * @param strokes a vector of strokes 
+ * 
+ * @return the newly constructed point cloud
+*/
 static std::vector<PointCloudPoint> convert_multi(
     const std::vector<std::vector<Vec2>>& strokes){
     std::vector<PointCloudPoint> cloud;
@@ -328,15 +422,6 @@ static std::vector<PointCloudPoint> convert_multi(
     return cloud;
 }
 
-static std::vector<Vec2> combine_multi(const std::vector<std::vector<Vec2>> strokes){
-    std::vector<Vec2> result;
-    for(auto& stroke : strokes){
-        for(auto& pt : stroke){
-            result.push_back(pt);
-        }
-    }
-    return result;
-}
 #pragma mark -
 #pragma mark Gesture Matching
 
@@ -349,15 +434,19 @@ bool PGestureRecognizer::init() {
 }
 
 /**
- * Returns the name of the gesture with the closest match to the given multi-stroke gesture.
+ * Returns the name of the gesture with the closest match to the given one.
  *
- * @param gesture  a vector of strokes (each stroke is a vector of Vec2 points)
+ * The match will be performed using the $P+ algorithm. If
+ * there is no match within the similarity threshold or orientation
+ * tolerance, this method will return the empty string. A gesture must
+ * consist of at least two points and at least one stroke
  *
- * @return the name of the gesture with the closest match, or "" if no match passes the threshold
+ * @param points    a vector of points representing a candidate gesture.
+ * 
+ * @return the name of the gesture with the closest match to the given one.
  */
 const std::string PGestureRecognizer::match(const std::vector<std::vector<Vec2>>& gesture) {
     if (_templates.empty() || gesture.empty()){
-        CULog("Gesture or template is empty");
         return "";
     } 
 
@@ -366,6 +455,8 @@ const std::string PGestureRecognizer::match(const std::vector<std::vector<Vec2>>
     candidate = cloud_resample(candidate, _normlength);
     candidate = cloud_scale(candidate);
     candidate = cloud_translate(candidate, PointCloudPoint{_normcenter, 0, 0});
+    float angle = indicative_angle(candidate);
+    candidate = cloud_rotate(candidate, angle);
     candidate = compute_normalized_angles(candidate);
 
     float bestDist = std::numeric_limits<float>::max();
@@ -373,9 +464,6 @@ const std::string PGestureRecognizer::match(const std::vector<std::vector<Vec2>>
     for (auto& pair : _templates) {
         for (auto& tmpl : pair.second) {
             float dist = cloud_distance(candidate, tmpl.getPoints());
-            CULog("Candidate points size: %zu", candidate.size());
-            CULog("Template points size: %zu", tmpl.getPoints().size());
-            CULog("Distance: %f", dist);
             if (dist < bestDist) {
                 bestDist = dist;
                 bestMatch = pair.first;
@@ -384,7 +472,6 @@ const std::string PGestureRecognizer::match(const std::vector<std::vector<Vec2>>
     }
 
     float similarity = 1.0f - (bestDist / (float)_normlength);
-    CULog("Similarity %f", similarity);
     if (similarity < _accuracy) {
         return ""; 
     }
@@ -393,13 +480,19 @@ const std::string PGestureRecognizer::match(const std::vector<std::vector<Vec2>>
 }
 
 /**
- * Returns the similarity of a candidate gesture to a named template.
+ * Returns the similarity measure of the named gesture to this one.
  *
- * @param name     the gesture template name
- * @param points   a vector of strokes
+ * The similarity measure will be computed using the $P+ algorithm. This 
+ * algorithm is rotationally inv
  *
- * @return similarity score [0,1] or 0 if the template doesn't exist
- */
+ * If there is no gesture of the given name, this method will return 0. A
+ * gesture must consist of at least two points.
+ *
+ * @param name      the name of the gesture to compare
+ * @param points    a vector of points representing a candidate gesture
+ *
+ * @return the similarity measure of the named gesture to this one.
+*/
 float PGestureRecognizer::similarity(
     const std::string name,
     const std::vector<std::vector<Vec2>>& points
@@ -411,6 +504,8 @@ float PGestureRecognizer::similarity(
     candidate = cloud_resample(candidate, _normlength);
     candidate = cloud_scale(candidate);
     candidate = cloud_translate(candidate, PointCloudPoint{_normcenter,0,0});
+    float angle = indicative_angle(candidate);
+    candidate = cloud_rotate(candidate, angle);
     candidate = compute_normalized_angles(candidate);
 
     float bestScore = 0.0f;
@@ -444,6 +539,8 @@ bool PGestureRecognizer::addGesture(
     cloud = cloud_resample(cloud, _normlength);
     cloud = cloud_scale(cloud);
     cloud = cloud_translate(cloud, PointCloudPoint{_normcenter,0,0});
+    float angle = indicative_angle(cloud);
+    cloud = cloud_rotate(cloud, angle);
     cloud = compute_normalized_angles(cloud);
 
     PointCloudGesture gesture(name, cloud);

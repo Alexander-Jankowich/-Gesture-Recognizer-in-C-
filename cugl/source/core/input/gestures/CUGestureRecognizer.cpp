@@ -762,10 +762,8 @@ const std::string GestureRecognizer::match(const Vec2* points,  size_t psize,
     }
     
     if (similarity < _accuracy) {
-        CULog("similarity was less than accuracy");
         return "";
     }
-    CULog("this is best match");
     return bestmatch;
 }
 
