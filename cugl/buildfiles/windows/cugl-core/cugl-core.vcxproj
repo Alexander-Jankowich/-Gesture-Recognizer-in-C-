@@ -48,6 +48,7 @@
     <ClCompile Include="..\..\..\source\core\input\CUTouchscreen.cpp" />
     <ClCompile Include="..\..\..\source\core\input\gestures\CUCoreGesture.cpp" />
     <ClCompile Include="..\..\..\source\core\input\gestures\CUGestureRecognizer.cpp" />
+    <ClCompile Include="..\..\..\source\core\input\gestures\CUPGestureRecognizer.cpp" />
     <ClCompile Include="..\..\..\source\core\input\gestures\CUPanGesture.cpp" />
     <ClCompile Include="..\..\..\source\core\input\gestures\CUPinchGesture.cpp" />
     <ClCompile Include="..\..\..\source\core\input\gestures\CUSpinGesture.cpp" />
