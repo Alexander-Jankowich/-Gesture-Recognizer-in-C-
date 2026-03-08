@@ -130,6 +130,7 @@
     <ClInclude Include="..\..\..\include\cugl\core\input\cu_input.h" />
     <ClInclude Include="..\..\..\include\cugl\core\input\gestures\CUCoreGesture.h" />
     <ClInclude Include="..\..\..\include\cugl\core\input\gestures\CUGestureRecognizer.h" />
+    <ClInclude Include="..\..\..\include\cugl\core\input\gestures\CUPGestureRecognizer.h" />
     <ClInclude Include="..\..\..\include\cugl\core\input\gestures\CUPanGesture.h" />
     <ClInclude Include="..\..\..\include\cugl\core\input\gestures\CUPinchGesture.h" />
     <ClInclude Include="..\..\..\include\cugl\core\input\gestures\CUSpinGesture.h" />

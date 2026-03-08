@@ -102,6 +102,7 @@ file(GLOB CORE_FILES CONFIGURE_DEPENDS
   ${CUGL_DIR}/source/core/assets/*.c
   ${CUGL_DIR}/source/core/assets/*.cpp
   ${CUGL_DIR}/source/core/input/*.cpp
+  ${CUGL_DIR}/source/core/input/gestures/*.cpp
   ${CUGL_DIR}/source/core/io/*.cpp
   ${CUGL_DIR}/source/core/math/*.cpp
   ${CUGL_DIR}/source/core/math/polygon/*.cpp

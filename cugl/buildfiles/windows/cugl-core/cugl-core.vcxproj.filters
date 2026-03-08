@@ -112,6 +112,8 @@
     </ClCompile>
     <ClCompile Include="..\..\..\source\core\input\gestures\CUGestureRecognizer.cpp">
       <Filter>Source Files\input\gestures</Filter>
+      <ClCompile Include="..\..\..\source\core\input\gestures\CUPGestureRecognizer.cpp">
+      <Filter>Source Files\input\gestures</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\source\core\input\gestures\CUPanGesture.cpp">
       <Filter>Source Files\input\gestures</Filter>
@@ -344,6 +346,8 @@
       <Filter>Header Files\input\gestures</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\cugl\core\input\gestures\CUGestureRecognizer.h">
+      <Filter>Header Files\input\gestures</Filter>
+      <ClInclude Include="..\..\..\include\cugl\core\input\gestures\CUPGestureRecognizer.h">
       <Filter>Header Files\input\gestures</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\cugl\core\input\gestures\CUPanGesture.h">
