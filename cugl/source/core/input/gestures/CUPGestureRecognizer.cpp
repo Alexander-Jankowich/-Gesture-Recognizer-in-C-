@@ -157,62 +157,6 @@ PointCloudPoint pt){
     }
     return result;
 }
-/**
- * Computes the indicative angle of a point cloud.
- *
- * The indicative angle is the angle formed between the centroid of the point cloud
- * and the first point in the cloud. It is used to rotate the gesture to a canonical
- * orientation, which is necessary for rotational invariance in the $P+ recognizer.
- *
- * @param pts  the vector of PointCloudPoint representing the gesture
- *
- * @return the angle in radians between the first point and the centroid
- */
-static float indicative_angle(const std::vector<PointCloudPoint>& pts) {
-    PointCloudPoint c = cloud_centroid(pts);
-    return atan2(c.position.y - pts[0].position.y,
-                 c.position.x - pts[0].position.x);
-}
-
-/**
- * Rotates a point cloud around its centroid by a specified angle.
- *
- * This function translates all points so that the centroid is at the origin,
- * rotates each point by the given angle (in radians), and then translates
- * the points back to the original centroid position.
- *
- * This is used to normalize the orientation of a gesture, making the
- * $P+ recognizer rotationally invariant.
- *
- * @param pts    the vector of PointCloudPoint to rotate
- * @param angle  the rotation angle in radians (positive = counterclockwise)
- *
- * @return a new vector of PointCloudPoint representing the rotated gesture
- *
- * Example:
- *   float angle = indicative_angle(cloud);
- *   cloud = cloud_rotate(cloud, -angle); // rotate gesture to canonical orientation
- */
-static std::vector<PointCloudPoint> cloud_rotate(
-    const std::vector<PointCloudPoint>& pts, float angle)
-{
-    PointCloudPoint c = cloud_centroid(pts);
-    std::vector<PointCloudPoint> result;
-
-    for (auto& p : pts) {
-        float dx = p.position.x - c.position.x;
-        float dy = p.position.y - c.position.y;
-
-        float qx = dx * cos(angle) - dy * sin(angle) + c.position.x;
-        float qy = dx * sin(angle) + dy * cos(angle) + c.position.y;
-
-        PointCloudPoint np = p;
-        np.position = Vec2(qx,qy);
-        result.push_back(np);
-    }
-
-    return result;
-}
 
 /**
  * Computes normalized turning angles 
@@ -455,8 +399,6 @@ const std::string PGestureRecognizer::match(const std::vector<std::vector<Vec2>>
     candidate = cloud_resample(candidate, _normlength);
     candidate = cloud_scale(candidate);
     candidate = cloud_translate(candidate, PointCloudPoint{_normcenter, 0, 0});
-    float angle = indicative_angle(candidate);
-    candidate = cloud_rotate(candidate, angle);
     candidate = compute_normalized_angles(candidate);
 
     float bestDist = std::numeric_limits<float>::max();
@@ -504,8 +446,6 @@ float PGestureRecognizer::similarity(
     candidate = cloud_resample(candidate, _normlength);
     candidate = cloud_scale(candidate);
     candidate = cloud_translate(candidate, PointCloudPoint{_normcenter,0,0});
-    float angle = indicative_angle(candidate);
-    candidate = cloud_rotate(candidate, angle);
     candidate = compute_normalized_angles(candidate);
 
     float bestScore = 0.0f;
@@ -527,7 +467,7 @@ float PGestureRecognizer::similarity(
  * @param name     the gesture name
  * @param points   a vector of strokes (multi-stroke)
  *
- * @return true if added successfully
+ * @return true if added successfull
  */
 bool PGestureRecognizer::addGesture(
     const std::string name,
@@ -539,8 +479,6 @@ bool PGestureRecognizer::addGesture(
     cloud = cloud_resample(cloud, _normlength);
     cloud = cloud_scale(cloud);
     cloud = cloud_translate(cloud, PointCloudPoint{_normcenter,0,0});
-    float angle = indicative_angle(cloud);
-    cloud = cloud_rotate(cloud, angle);
     cloud = compute_normalized_angles(cloud);
 
     PointCloudGesture gesture(name, cloud);
